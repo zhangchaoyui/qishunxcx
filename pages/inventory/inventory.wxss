@@ -1,0 +1,400 @@
+/* pages/inventory/inventory.wxss */
+
+.inven_mine {
+  width: 94%;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  box-shadow: 0rpx 0rpx 14rpx 0rpx #eee;
+}
+
+.mine_title {
+  color: #fff;
+  font-size: 34rpx;
+  letter-spacing: 2rpx;
+  background: #0e948b;
+  border-radius: 20rpx 20rpx 0 0;
+  padding: 10rpx 20rpx;
+}
+
+.mine_hupwu_info {
+  padding-bottom: 20rpx;
+}
+
+.outer_packing text {
+  color: #ff1818;
+}
+
+.outer_packing {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.outer_packing image {
+  width: 30rpx;
+  height: 30rpx;
+  padding-top: 6rpx;
+  margin-left: 10rpx;
+}
+
+.outer_packing .have {
+  margin-left: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.outer_packing .not_have {
+  margin-left: 60rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.huwu_w {
+  position: relative;
+}
+
+.huwu_w .offer_img {
+  width: 42rpx;
+  height: 42rpx;
+  background: #d9d0b3;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  border-radius: 0 8rpx 0 70rpx;
+}
+
+.huwu_w .offer_img image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 18rpx;
+  margin-bottom: 5rpx;
+}
+
+.add_huowu {
+  width: 100%;
+  height: 40rpx;
+  background: #0E948B;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+  color: white;
+}
+
+.perch_t .perch_tshu {
+  width: 145rpx;
+  height: 95rpx;
+  margin-top: 24rpx;
+  margin-bottom: 2rpx;
+}
+
+.s {
+  background: #fff;
+  padding: 20rpx;
+}
+
+.add_huowu image {
+  width: 27rpx;
+  height: 27rpx;
+  padding-right: 10rpx;
+}
+
+.outer_packing input {
+  width: 100rpx;
+  border-bottom: 1rpx solid #eee;
+  text-indent: 28rpx;
+  text-align: center;
+}
+
+.bo_n {
+  border: none;
+}
+
+.vaild {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.all_t {
+  color: #999;
+  font-size: 26rpx;
+  padding-bottom: 30rpx;
+  text-align: right;
+}
+
+.all_t text {
+  color: #0e948b;
+}
+
+.item_s {
+  padding: 20rpx 0;
+}
+
+.zhanwei {
+  height: 20rpx;
+  background: #eee;
+}
+
+.mine_siji_info .item {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.mine_siji_info .item text {
+  color: #ff1818;
+}
+
+.mine_siji_info .item input {
+  margin-left: 30rpx;
+}
+
+.mine_siji_info .item_t {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.mine_siji_info .item_a {
+  border: none;
+}
+
+.item_t .item_wp {
+  display: flex;
+}
+
+.item_t .item_wp {
+  display: flex;
+}
+
+.item_t text {
+  color: #ff1818;
+}
+
+.perch_t {
+  width: 250rpx;
+  height: 160rpx;
+  background-color: #eee;
+  margin-top: 20rpx;
+  text-align: center;
+  margin-right: 40rpx;
+  position: relative;
+}
+
+.perch_t view {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.perch_t image {
+  width: 145rpx;
+  height: 95rpx;
+  margin-bottom: 2rpx;
+}
+
+.perch_t view {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.perch_t .perch_tshu {
+  width: 145rpx;
+  height: 95rpx;
+  margin-top: 24rpx;
+  margin-bottom: 2rpx;
+}
+
+.perch_t .img {
+  position: absolute;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 250rpx;
+  height: 160rpx;
+  overflow: hidden;
+  border-radius: 8rpx;
+}
+
+.perch_t .offer_img {
+  width: 42rpx;
+  height: 42rpx;
+  background: #d9d0b3;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  border-radius: 0 8rpx 0 70rpx;
+}
+
+.perch_t .offer_img image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 10rpx;
+}
+
+.vaild {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.vaild .three {
+  display: flex;
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.thre_wp {
+  width: 82%;
+  height: 160rpx;
+  margin-left: 20rpx;
+  padding: 10rpx;
+  border: 1rpx solid #eee;
+}
+
+.texttare {
+  width: 100%;
+  height: 100rpx;
+}
+
+.currentWordNumber {
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  right: 36rpx;
+  bottom: 30rpx;
+}
+
+.fourth .center {
+  padding: 30rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  text-align: center;
+  color: #333;
+}
+
+.btn {
+  padding: 50rpx 0;
+}
+
+.btn button {
+  width: 100%;
+  color: #fff;
+  border-radius: 40rpx;
+  background-color: #0e948b;
+  font-weight: normal;
+  letter-spacing: 2rpx;
+}
+
+.btn view {
+  color: #999;
+  font-size: 28rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+
+.hupwuList {
+  width: 100%;
+  background-color: #d9d0b3;
+}
+
+.hupwuList .item_car {
+  padding: 10rpx 0rpx 10rpx 20rpx;
+}
+
+.hupwuList .item_car::before {
+  content: "· ";
+}
+
+.active {
+  background: #f5f5f5;
+}
+
+/*使屏幕变暗  */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.commodity_attr_box {
+  width: 80%;
+  height: 325rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 99999;
+  background: #fff;
+  padding: 20rpx 0;
+  border-radius: 25rpx;
+}
+
+.share_wp {
+  width: 96%;
+  background: #fff;
+  padding: 14rpx 0;
+  margin: auto;
+  border-radius: 20rpx;
+}
+
+.youxiao {
+  width: 76%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.share_wp image {
+  width: 93rpx;
+  height: 93rpx;
+}
+
+.share_wp .describe {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.share_wp .btns_share {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vh;
+}
+
+.share_wp .btns_share view {
+  width: 184rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 20rpx 0;
+}
+
+.share_wp .btns_share .offer {
+  color: #999;
+  background: #e5e5e5;
+}
+
+.share_wp .btns_share .off {
+  color: #fff;
+  background: #0e948b;
+}
+
+.title_s {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

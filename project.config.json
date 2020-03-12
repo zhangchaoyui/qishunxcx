@@ -1,0 +1,221 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.4",
+	"appid": "wx81b0b4736156de23",
+	"projectname": "ShunCloudStorage",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/loginAccredit/loginAccredit",
+					"pathName": "pages/loginAccredit/loginAccredit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "首页",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "存货",
+					"pathName": "pages/pickUpGoods/pickUpGoods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提货",
+					"pathName": "pages/inventory/inventory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "存储列表",
+					"pathName": "pages/storeList/storeList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "找回密码",
+					"pathName": "pages/findPassword/findPassword",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资料信息",
+					"pathName": "pages/datumInfo/datumInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/aboutMine/aboutMine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/helpTickling/helpTickling",
+					"pathName": "pages/helpTickling/helpTickling",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "历史账单",
+					"pathName": "pages/historyBill/historyBill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/historyBillList/historyBillList",
+					"pathName": "pages/historyBillList/historyBillList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/kindsRecord/kindsRecord",
+					"pathName": "pages/kindsRecord/kindsRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cunchuList/cunchuList",
+					"pathName": "pages/cunchuList/cunchuList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "帮助与反馈",
+					"pathName": "pages/helpTickling/helpTickling",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/enroll/enroll",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/findPassword/findPassword",
+					"pathName": "pages/findPassword/findPassword",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAccredit/loginAccredit",
+					"pathName": "pages/loginAccredit/loginAccredit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/helpTickling/helpTickling",
+					"pathName": "pages/helpTickling/helpTickling",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "个人订单存货订单详情",
+					"pathName": "pages/cunchuListDetails/cunchuListDetails",
+					"query": "id=1&pick=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cunchuListDetails/cunchuListDetails",
+					"pathName": "pages/cunchuListDetails/cunchuListDetails",
+					"query": "id=5&pick=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

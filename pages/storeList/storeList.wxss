@@ -1,0 +1,57 @@
+/* pages/storeList/storeList.wxss */
+
+.wp_top {
+  width: 100%;
+  height: 70rpx;
+  background: #0e948b;
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.wp_top view text {
+  font-size: 20rpx;
+}
+
+.wp_top view image {
+  width: 20rpx;
+  height: 10rpx;
+}
+
+.image-p {
+  display: flex;
+  align-items: center;
+}
+
+.iamge-t {
+  margin-left: 10rpx;
+}
+
+.item {
+  display: flex;
+}
+
+.item .one {
+  width: 94%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.item .img {
+  width: 6%;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.item .img image {
+  width: 13rpx;
+  height: 20rpx;
+  margin-top: 26rpx;
+}

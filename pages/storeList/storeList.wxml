@@ -1,0 +1,44 @@
+<!--pages/storeList/storeList.wxml-->
+<view class="store_list_wp">
+
+	<!-- 头部 -->
+	<view class="wp_top">
+		<view>货品名称
+			<image src="/images/xiala.png"></image>
+		</view>
+		<!-- <view>
+			<picker mode="selector" range="{{ huoName }}" >
+				<view class="image-p">
+					<view>{{ dateTime }}</view>
+					<image class="iamge-t" src="/images/xiala.png"></image>
+				</view>
+			</picker>
+		</view> -->
+		<view>现存数量
+			<text>(吨)</text>
+		</view>
+		<view>未入库
+			<text>(吨)</text>
+		</view>
+		<view>已取货
+			<text>(吨)</text>
+		</view>
+	</view>
+
+	<!-- 列表 -->
+	<view class="wp_list">
+		<view class="item" wx:for="{{ dataList }}" wx:key="index" bindtap="itemClick" data-id="{{item.goods_id}}">
+			<view class="one">
+				<view>{{ item.goods.goods_name }}</view>
+				<view>{{ item.weight/1000 }}</view>
+				<view>{{ item.goods.put_weight/1000 }}</view>
+				<view>{{ item.goods.pick_weight/1000 }}</view>
+			</view>
+			<view class="img">
+				<image src="/images/jt_left.png"></image>
+			</view>
+		</view>
+
+	</view>
+
+</view>

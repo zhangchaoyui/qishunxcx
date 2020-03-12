@@ -1,0 +1,121 @@
+/* pages/cunchuList/cunchuList.wxss */
+
+.list_wp {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 28rpx;
+  background: #eee;
+}
+
+.top_tab {
+  color: #999;
+  width: 100%;
+  padding: 40rpx 0;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+}
+
+.top_tab view {
+  padding: 10rpx 40rpx;
+  border-radius: 50rpx;
+  background: #e5e5e5;
+}
+
+.top_tab .active {
+  color: #fff;
+  background: #0e948b;
+}
+
+.mineTab {
+  display: flex;
+  padding: 30rpx 0 10rpx 0;
+  justify-content: space-around;
+}
+
+.mineTab view {
+  padding: 4rpx 0;
+  color: #666;
+  letter-spacing: 2rpx;
+}
+
+.mineTab .mine_active {
+  color: #0e948b;
+  border-bottom: 4rpx solid #0e948b;
+}
+
+.item_list {
+}
+
+.items {
+  width: 90%;
+  margin: 20rpx auto;
+  background: #fff;
+}
+
+.items .items_top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  color: #0e948b;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+
+.items .items_top image {
+  width: 33rpx;
+  height: 33rpx;
+}
+
+.top_left {
+  display: flex;
+  align-items: cenetr;
+}
+
+.top_left image {
+  padding-top: 4rpx;
+}
+
+.top_left view {
+  padding-left: 10rpx;
+}
+
+.items_mine {
+  /* display: flex; */
+  justify-content: space-between;
+  padding: 10rpx 20rpx 20rpx 20rpx;
+  background: #fff;
+}
+
+.items_mine_left {
+  margin-top: 20rpx;
+}
+
+.items_mine_left view {
+  padding: 4rpx 0;
+}
+
+.items_mine_right {
+  display: flex;
+  margin-top: 30rpx;
+  margin-bottom: 16rpx;
+  justify-content: flex-end;
+}
+
+.items_mine_right .btn {
+  color: #fff;
+  padding: 10rpx 30rpx;
+  border-radius: 90rpx;
+  margin: 0 10rpx;
+}
+
+.items_mine_right .copy {
+  background: #0e948b;
+}
+
+.items_mine_right .cancellation {
+  background: #ff1818;
+}
+
+.items_mine_right .details {
+  background: #d9d0b3;
+}

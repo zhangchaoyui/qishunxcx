@@ -1,0 +1,32 @@
+<!--pages/historyBill /historyBill .wxml-->
+<view class="history_wp">
+
+	<!-- 时间 -->
+	<view class="xz_time">
+		<view class="you">
+			<!-- <view class="xz_p">2019年12月
+        <image src="/images/jt_bottom.png"></image>
+      </view> -->
+			<picker mode="date" value="{{ dateT }}" fields="month" bindchange="bindDateChange">
+				<view class="image-p">
+					<text>{{ dateTime }}</text>
+					<image class="iamge-t" src="/images/jt_bottom.png"></image>
+				</view>
+			</picker>
+			<view class="xz_xqing">累计账单：{{total_money}}(元)</view>
+		</view>
+	</view>
+
+	<!-- 列表 -->
+	<view class="item" wx:for="{{ dataList }}" wx:key="index" bindtap="dataClick" data-id="{{item.id}}">
+
+		<view class="item_left">
+			<view>{{ item.create_time }}</view>
+			<text>费用账单</text>
+		</view>
+
+		<view class="item_right">{{ item.cost_money }}</view>
+
+	</view>
+
+</view>

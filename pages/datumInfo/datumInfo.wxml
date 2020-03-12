@@ -1,0 +1,34 @@
+<!--pages/datumInfo/datumInfo.wxml-->
+<view class="datum_wp">
+
+  <!-- 用户头像 -->
+  <view class="head_portrait">
+    <image src="{{userinfo.avatarUrl}}" class="prester" mode="widthFix"></image>
+  </view>
+
+  <!-- 占位 -->
+  <view class="zhanwei"></view>
+
+  <!-- 用户信息 -->
+  <view class="user_info_item">
+    <view class="item_title">手机号</view>
+    <view class="item_info">{{userinfo.phone}}</view>
+  </view>
+  <!-- <view class="user_info_item">
+    <view class="item_title">微信号</view>
+    <view class="item_info">buweifanhua</view>
+  </view> -->
+  <view class="user_info_item">
+    <view class="item_title">合同编号</view>
+    <view class="item_info">{{userinfo.contract.contract_no}}</view>
+  </view>
+  <view class="user_info_item">
+    <view class="item_title">合同起止日期</view>
+    <view class="item_info">2019.12.22-2029.12.22</view>
+  </view>
+  <view class="user_info_item">
+    <view class="item_title">合同责任人</view>
+    <view class="item_info">{{userinfo.contract.duty_person}}</view>
+  </view>
+
+</view>

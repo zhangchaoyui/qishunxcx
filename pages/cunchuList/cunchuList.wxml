@@ -1,0 +1,178 @@
+<!--pages/cunchuList/cunchuList.wxml-->
+<view class="list_wp">
+
+	<!-- 头部tab选择 -->
+	<view class="top_tab">
+		<view class="{{ currtab==index ? 'active':'' }}" bindtap="tab" data-index="{{ index }}" wx:for="{{ tabList }}" wx:key="index">{{ item }}</view>
+	</view>
+
+	<!-- 内容 -->
+	<view class="mine_wp" wx:if="{{ currtab == 0 }}">
+
+		<!-- 内容tab切换 -->
+		<view class="mineTab">
+			<view class="{{ currtabMine==index ? 'mine_active':'' }} " bindtap="mineTab" data-index="{{ index }}" wx:for="{{ mineTabList }}" wx:key="index">{{ item }}</view>
+		</view>
+
+		<!-- 订单列表 -->
+		<view class="item_list">
+
+			<!-- 未处理 -->
+			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 0 }}" data-id="{{ item.id }}">
+				<view class="items_top">
+					<view class="top_left">
+						<image src="/images/time.png"></image>
+						<view>提交时间</view>
+					</view>
+					<view class="top_right">{{ item.create_time }}</view>
+				</view>
+
+				<view class="items_mine">
+					<view class="items_mine_left">
+						<view class="items_mine_name">货物名称:{{ item.str_goods }}</view>
+						<view class="items_mine_num">货物总数量：{{ item.all_weight/1000 }}吨</view>
+					</view>
+
+					<view class="items_mine_right">
+						<!-- <view class="btn copy" catchtap="orderCopy" data-id="{{item.id}}" data-status="0">复制</view> -->
+						<view class="btn cancellation" catchtap="abolish" data-id="{{item.id}}">作废</view>
+						<view class="btn details" bindtap="itemsClick" data-pick="0" data-id="{{item.id}}">查看详情</view>
+					</view>
+				</view>
+			</view>
+
+			<!-- 处理中 -->
+			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 1 }}" bindtap="itemsClick" data-id="{{ item.id }}" data-pick="0">
+				<view class="items_top">
+					<view class="top_left">
+						<image src="/images/time.png"></image>
+						<view>提交时间</view>
+					</view>
+					<view class="top_right">{{ item.create_time }}</view>
+				</view>
+
+				<view class="items_mine">
+					<view class="items_mine_left">
+						<view class="items_mine_name">货物名称:{{ item.str_goods }}</view>
+						<view class="items_mine_num">货物总数量：{{ item.all_weight/1000 }}吨</view>
+						<view class="items_mine_num">入库人：{{ item.wuser.truename}}</view>
+					</view>
+
+					<view class="items_mine_right">
+						<view class="btn details">查看详情</view>
+					</view>
+
+				</view>
+			</view>
+
+			<!-- 已处理 -->
+			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 2 }}" bindtap="itemsClick" data-id="{{ item.id }}" data-pick="0">
+				<view class="items_top">
+					<view class="top_left">
+						<image src="/images/time.png"></image>
+						<view>提交时间</view>
+					</view>
+					<view class="top_right">{{ item.create_time }}</view>
+				</view>
+
+				<view class="items_mine">
+					<view class="items_mine_left">
+						<view class="items_mine_name">货物名称:{{ item.str_goods }}</view>
+						<view class="items_mine_num">货物总数量：{{ item.all_weight/1000 }}吨</view>
+						<view class="items_mine_num">入库人：{{ item.wuser.truename }}</view>
+						<view class="items_mine_num">入库时间：{{ item.update_time }}</view>
+					</view>
+					<view class="items_mine_right">
+						<view class="items_mine_right">
+							<view class="btn details" wx:if="{{item.status!=5}}">查看详情</view>
+							<view class="btn fei cancellation" wx:elif="{{item.status==5}}">已废除</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<view class="mine_wp" wx:else>
+		<!-- 内容tab切换 -->
+		<view class="mineTab">
+			<view class="{{ currtabMine==index ? 'mine_active':'' }} " bindtap="mineTab" data-index="{{ index }}" wx:for="{{ mineTabList2 }}" wx:key="index">{{ item }}</view>
+		</view>
+
+		<!-- 订单列表 -->
+		<view class="item_list">
+
+			<!-- 未处理 -->
+			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 0 }}" data-id="{{ item.id }}">
+				<view class="items_top">
+					<view class="top_left">
+						<image src="/images/time.png"></image>
+						<view>提交时间</view>
+					</view>
+					<view class="top_right">{{ item.create_time }}</view>
+				</view>
+
+				<view class="items_mine">
+					<view class="items_mine_left">
+						<view class="items_mine_name">货物名称:{{ item.str_goods }}</view>
+						<view class="items_mine_num">货物总数量：{{ item.goods[0].weight/1000 }}吨</view>
+					</view>
+
+					<view class="items_mine_right">
+						<!--<view class="btn copy" catchtap="orderCopy" data-id="{{item.id}}" data-status="1">复制</view> -->
+						<view class="btn cancellation" catchtap="abolish" data-id="{{item.id}}">作废</view>
+						<view class="btn details" bindtap="itemsClick" data-pick="1" data-id="{{item.id}}">查看详情</view>
+					</view>
+				</view>
+			</view>
+
+			<!-- 处理中 -->
+			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 1 }}" bindtap="itemsClick" data-id="{{ item.id }}" data-pick="1">
+				<view class="items_top">
+					<view class="top_left">
+						<image src="/images/time.png"></image>
+						<view>提交时间</view>
+					</view>
+					<view class="top_right">{{ item.create_time }}</view>
+				</view>
+
+				<view class="items_mine">
+					<view class="items_mine_left">
+						<view class="items_mine_name">货物名称:{{ item.str_goods }}</view>
+						<view class="items_mine_num">货物总数量：{{ item.all_weight/1000 }}吨</view>
+						<view class="items_mine_num">入库人：{{ item.wuser.truename}}</view>
+					</view>
+
+					<view class="items_mine_right">
+						<view class="btn details">查看详情</view>
+					</view>
+
+				</view>
+			</view>
+
+			<!-- 已处理 -->
+			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 2 }}" bindtap="itemsClick" data-id="{{ item.id }}" data-pick="1">
+				<view class="items_top">
+					<view class="top_left">
+						<image src="/images/time.png"></image>
+						<view>提交时间</view>
+					</view>
+					<view class="top_right">{{ item.create_time }}</view>
+				</view>
+
+				<view class="items_mine">
+					<view class="items_mine_left">
+						<view class="items_mine_name">货物名称:{{ item.str_goods }}</view>
+						<view class="items_mine_num">货物总数量：{{ item.all_weight/1000 }}吨</view>
+						<view class="items_mine_num">入库人：{{ item.wuser.truename }}</view>
+						<view class="items_mine_num">入库时间：{{ item.update_time }}</view>
+					</view>
+					<view class="items_mine_right">
+						<view class="btn details" wx:if="{{item.status!=5}}">查看详情</view>
+						<view class="btn fei cancellation" wx:elif="{{item.status==5}}">已废除</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

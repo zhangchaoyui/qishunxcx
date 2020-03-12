@@ -1,0 +1,35 @@
+/* pages/datumInfo/datumInfo.wxss */
+
+.head_portrait {
+  text-align: center;
+  padding: 60rpx 0;
+}
+
+.head_portrait image {
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 100%;
+  border: 1rpx solid white;
+}
+
+.zhanwei {
+  height: 14rpx;
+  background: #eee;
+}
+
+.user_info_item {
+  width: 94%;
+  color: #333;
+  display: flex;
+  margin: 0 auto;
+  padding: 40rpx 0;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.item_info {
+  color: #999;
+  font-size: 27rpx;
+}

@@ -1,0 +1,137 @@
+<!--pages/cunchuListDetails/cunchuListDetails.wxml-->
+<view class="details_wp">
+
+	<view class="inven_mine">
+
+		<!-- 标题 -->
+		<view class="mine_title">
+			订单详情
+		</view>
+
+		<!-- 货物信息 -->
+		<view class="mine_hupwu_info" wx:for="{{goods}}" wx:key="i">
+			<view class="youxiao_wp">
+				<view class="outer_packing">
+					货物名称：{{item.goods.goods_name}}
+				</view>
+				<view class="outer_packing" wx:if="{{pick==0}}">
+					产地：{{item.region.place_name}}
+				</view>
+				<view class="outer_packing" wx:elif="{{pick==0}}">
+					型号：{{data.goods[0].cate.cate_name}} {{data.goods[0].cate_type==0? '正品':'副品'}}
+				</view>
+				<!-- 货物数量 -->
+				<view class="huowu">
+					货物数量
+					<input placeholder-class="place_class" placeholder="{{item.weight/1000}}" disabled="true"></input>吨
+					<!-- <input placeholder-class="place_class" placeholder="{{data.goods[0].piece}}"></input>件 -->
+				</view>
+				<!-- 外包装 -->
+				<view class="outer_packing">
+					外包装
+					<view class="have">
+						<view class="title">有</view>
+						<image wx:if="{{ data.goods[0].pack_idss }}" src="/images/check_a.png"></image>
+						<image wx:else src="/images/check.png"></image>
+					</view>
+					<view class="not_have">
+						<view class="title">无</view>
+						<image wx:if="{{ ! data.goods[0].pack_idss }}" src="/images/check_a.png"></image>
+						<image wx:else src="/images/check.png"></image>
+					</view>
+				</view>
+				<!-- 外包装数量 -->
+				<view class="outer_xz" wx:if="{{ data.goods[0].pack_idss }}">
+					<view class="outer_packing xz">
+						包装类别
+						<view class="xz_item" wx:for="{{ data.goods[0].pack_idss }}">
+							<image src="/images/checkblock_a.png"></image>
+							<view>{{ item.pack_name }}</view>
+							<view class="inpu">
+								<input disabled="true" value="{{ item.piece }}"></input>
+							</view>
+						</view>
+					</view>
+					<view class="outer_packing xz">
+						是否卖掉
+						<view class="xz_item" wx:if="{{ data.goods[0].put_status==0 }}">
+							<image src="/images/checkblock_a.png"></image>
+							<view>否</view>
+						</view>
+						<view class="xz_item" wx:else>
+							<image src="/images/checkblock_a.png"></image>
+							<view>是 </view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<!-- 司机信息 -->
+		<view class="mine_siji_info">
+			<view class="youxiao_wp">
+
+				<view class="item">
+					司机姓名：{{data.driver.driver_name}}
+				</view>
+
+				<view class="item">
+					联系电话：{{data.driver.mobile}}
+				</view>
+
+				<view class="item">
+					身份证号：{{data.driver.idcard}}
+				</view>
+
+				<view class="item">
+					车型号：{{data.driver.car_type}}
+				</view>
+
+				<view class="item">
+					车牌号：{{data.driver.car_num}}
+				</view>
+
+				<view class="item_t item_a">
+					驾驶证
+					<view class="item_wp">
+						<view class="perch_t">
+							<image src="{{data.driver.driving_licence1}}" mode='widthFix'></image>
+						</view>
+						<view class="perch_t">
+							<image src="{{data.driver.driving_licence2}}" mode='widthFix'></image>
+						</view>
+					</view>
+				</view>
+
+				<view class="item_t item_a">
+					行驶证
+					<view class="item_wp">
+						<view class="perch_t">
+							<image src="{{data.driver.driving_permit1}}" mode='widthFix'></image>
+						</view>
+						<view class="perch_t">
+							<image src="{{data.driver.driving_permit2}}" mode='widthFix'></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="mine_yuji_time">
+			<view class="youxiao_wp">
+				<view>预计到货时间：{{time}} {{data.am_and_pm}}</view>
+				<!-- <view>入库人：王利</view>
+				<view>入库时间：{{data.update_time}}</view> -->
+			</view>
+		</view>
+	</view>
+
+	<!--  提交 -->
+	<view class="youxiao_wp">
+		<view class="btn">
+			<view>存货订单已提交，不能修改，您可作废并复制一条新的订单。</view>
+			<button bindtap="orderCopy" data-id="{{data.id}}">作废</button>
+		</view>
+	</view>
+
+</view>

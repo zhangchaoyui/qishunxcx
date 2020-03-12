@@ -1,0 +1,253 @@
+/* pages/mine/mine.wxss */
+
+.mine_wp {
+  width: 100%;
+  min-height: 100vh;
+  background: #eee;
+}
+
+.mine_top {
+  height: 260rpx;
+  background: #0e948b;
+  padding: 40rpx 40rpx 0 40rpx;
+  border-radius: 0 0 50% 50%/0 0 30% 30%;
+}
+
+.login_wp {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.userinfo .pic {
+  margin-top: 6rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 111rpx;
+  height: 112rpx;
+}
+
+.userinfo {
+  display: flex;
+}
+
+.userinfo .pic image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.nickname {
+  max-width: 300rpx;
+  padding: 6rpx 30rpx;
+  background: #73c1bc;
+  color: #fff;
+  border-radius: 70rpx;
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.store_Info {
+  color: #fff;
+  font-size: 28rpx;
+  text-align: right;
+}
+
+.store_Info .store_h {
+  font-size: 44rpx;
+  font-weight: bold;
+  padding-bottom: 2rpx;
+}
+
+.cuncuInfo {
+  width: 90%;
+  height: 100rpx;
+  background: rgb(255, 255, 255);
+  border-radius: 10rpx;
+  position: absolute;
+  top: 160rpx;
+  left: 0;
+  margin: 40rpx 40rpx 0 40rpx;
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0 50rpx 0;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+
+}
+
+.left_cun {
+  width: 48%;
+  text-align: center;
+}
+
+.right_cun {
+  width: 48%;
+  text-align: center;
+}
+
+.cuncuInfo .price {
+  color: #0e948b;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.cuncuInfo .title {
+  letter-spacing: 1rpx;
+}
+
+.cuncuInfo .title text {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.xian {
+  width: 4rpx;
+  height: 80rpx;
+  background: #e5e5e5;
+}
+
+.mine_list {
+  margin-top: 104rpx;
+}
+
+.list_item {
+  width: 90%;
+  background: rgb(255, 255, 255);
+  border-radius: 10rpx;
+  margin: 40rpx 40rpx 0 40rpx;
+  font-size: 28rpx;
+}
+
+.nb navigator {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nb:last-child {
+  border: none;
+}
+
+.nb view {
+  display: flex;
+  align-items: center;
+}
+
+.left_img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.list_text {
+  padding-left: 10rpx;
+}
+
+.right_img {
+  width: 15rpx;
+  height: 27rpx;
+  float: right;
+}
+
+.sign_out {
+  width: 90%;
+  height: 80rpx;
+  color: white;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #0e948b;
+  border-radius: 10px;
+  margin: 3vh auto 0;
+}
+
+/*使屏幕变暗  */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.commodity_attr_box {
+  width: 80%;
+  height: 300rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 99999;
+  background: #fff;
+  padding: 20rpx 0;
+  border-radius: 25rpx;
+}
+
+.share_wp {
+  width: 96%;
+  background: #fff;
+  padding: 14rpx 0;
+  margin: auto;
+  border-radius: 20rpx;
+}
+
+.youxiao {
+  width: 76%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.share_wp image {
+  width: 93rpx;
+  height: 93rpx;
+}
+
+.share_wp .describe {
+  color: #666;
+  margin-top: 1vh;
+}
+
+.share_wp .btns_share {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5vh;
+}
+
+.share_wp .btns_share view {
+  width: 184rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 20rpx 0;
+}
+
+.share_wp .btns_share .offer {
+  color: #999;
+  background: #e5e5e5;
+}
+
+.share_wp .btns_share .off {
+  color: #fff;
+  background: #0e948b;
+}

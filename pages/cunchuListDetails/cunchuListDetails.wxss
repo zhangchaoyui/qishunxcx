@@ -1,0 +1,268 @@
+/* pages/cunchuListDetails/cunchuListDetails.wxss */
+
+page {
+  background: #eee;
+}
+
+.inven_mine {
+  width: 94%;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  box-shadow: 0rpx 0rpx 14rpx 0rpx #eee;
+}
+
+.youxiao_wp {
+  width: 94%;
+  margin: 0 auto;
+}
+
+.mine_title {
+  color: #fff;
+  font-size: 34rpx;
+  letter-spacing: 2rpx;
+  background: #0e948b;
+  border-radius: 20rpx 20rpx 0 0;
+  padding: 10rpx 20rpx;
+}
+
+.mine_hupwu_info {
+  padding-bottom: 20rpx;
+  background: #fff;
+}
+
+.outer_packing {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.outer_packing image {
+  width: 25rpx;
+  height: 25rpx;
+  padding-top: 6rpx;
+  margin-left: 10rpx;
+}
+
+.outer_packing .have {
+  margin-left: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.outer_packing .not_have {
+  margin-left: 60rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.huowu {
+  padding: 30rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.huowu input {
+  width: 20%;
+  margin: 0 20rpx;
+  text-align: center;
+}
+
+.add_huowu {
+  width: 100%;
+  height: 40rpx;
+  background: #d9d0b3;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10rpx;
+}
+
+.add_huowu image {
+  width: 27rpx;
+  height: 27rpx;
+  padding-right: 10rpx;
+}
+
+.outer_packing input {
+  width: 100rpx;
+  border-bottom: 1rpx solid #eee;
+  text-indent: 28rpx;
+  text-align: center;
+}
+
+.bo_n {
+  border: none;
+}
+
+.all_t {
+  color: #999;
+  font-size: 26rpx;
+  padding-bottom: 30rpx;
+  text-align: right;
+}
+
+.all_t text {
+  color: #0e948b;
+}
+
+.mine_siji_info {
+  background: #fff;
+}
+
+.mine_siji_info .item {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.mine_siji_info .item text {
+  color: #ff1818;
+}
+
+.mine_siji_info .item input {
+  margin-left: 30rpx;
+}
+
+.mine_siji_info .item_t {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.mine_siji_info .item_a {
+  border: none;
+}
+
+.item_t .item_wp {
+  display: flex;
+}
+
+.item_t .item_wp {
+  display: flex;
+}
+
+.item_t text {
+  color: #ff1818;
+}
+
+.perch_t {
+  width: 250rpx;
+  height: 160rpx;
+  background-color: #eee;
+  margin-top: 20rpx;
+  text-align: center;
+  margin-right: 40rpx;
+  overflow: hidden;
+}
+
+.perch_t image {
+  width: 100%;
+  height: 100%;
+}
+
+.currentWordNumber {
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  right: 36rpx;
+  bottom: 30rpx;
+}
+
+.btn {
+  padding: 50rpx 0;
+}
+
+.btn button {
+  width: 100%;
+  color: #fff;
+  border-radius: 40rpx;
+  background-color: #0e948b;
+  font-weight: normal;
+  letter-spacing: 2rpx;
+}
+
+.btn view {
+  color: #999;
+  font-size: 22rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+
+.hupwuList {
+  width: 100%;
+  display: flex;
+  background-color: #d9d0b3;
+}
+
+.place_a {
+  width: 33%;
+  border-right: 1rpx solid #fff;
+}
+
+.place_b {
+  width: 33%;
+  text-align: center;
+  border-right: 1rpx solid #fff;
+}
+
+.place_c {
+  width: 33%;
+  text-align: center;
+}
+
+.place_a_item,
+.place_b_item,
+.place_c_item {
+  padding: 10rpx 0rpx 10rpx 20rpx;
+}
+
+.place_a_item::before {
+  content: "· ";
+}
+
+.active {
+  background: #f5f5f5;
+}
+
+.mine_yuji_time {
+  margin-top: 20rpx;
+  background: #eee;
+  padding: 20rpx 0;
+  background: #fff;
+}
+
+.outer_xz {
+  width: 90%;
+  color: #333;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  margin: 0 auto;
+}
+
+.outer_xz .xz {
+  border: none;
+  padding: 10rpx;
+  display: block;
+}
+
+.outer_xz .xz_item {
+  display: flex;
+  padding: 10rpx 0 10rpx 20rpx;
+}
+
+.outer_xz .xz_item view {
+  padding-left: 10rpx;
+}
+
+.outer_xz .xz_item .inpu {
+  display: flex;
+}
+
+.outer_xz .xz_item .inpu input {
+  width: 100%;
+  color: #666666;
+  border: 1rpx solid #535353;
+}

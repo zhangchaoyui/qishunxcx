@@ -1,0 +1,125 @@
+/* pages/helpTickling/helpTickling.wxss */
+
+.help_wp {
+  width: 100%;
+  overflow:hidden;
+  border-top: 1rpx solid #eee;
+  color: #666;
+}
+
+.text_input {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 28rpx;
+}
+
+.text_input .t {
+  padding: 30rpx 0 20rpx 0;
+}
+
+.text_input textarea {
+  width: 100%;
+  height: 160rpx;
+  padding: 10rpx;
+}
+
+.text_input .zi {
+  color: #d2d2d2;
+  text-align: right;
+  padding-bottom: 10rpx;
+}
+
+.phone {
+  width: 100%;
+  padding: 30rpx;
+  display: flex;
+  border-top: 1rpx solid #eee;
+}
+
+.add_img {
+  padding: 30rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+
+.submit {
+  width: 70%;
+  margin: 60rpx auto;
+}
+
+.submit .btns {
+  width: 100%;
+  color: #fff;
+  border-radius: 40rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #0e948b;
+}
+
+.submit .ke_phone {
+  text-align: center;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+.submit .ke_phone text {
+  color: #0e948b;
+}
+
+/*  */
+
+.weui-uploader__bd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.weui-uploader__input {
+  width: 188rpx !important;
+  height: 188rpx !important;
+  border-radius: 10rpx;
+  border: none;
+  background: url("http://lyxms.oss-cn-zhangjiakou.aliyuncs.com/201912060845374d4335461.png") no-repeat center center;
+  background-size: 100%;
+}
+
+.weui-uploader__file image {
+  width: 188rpx;
+  height: 188rpx;
+  border-radius: 10rpx;
+  display: block;
+  vertical-align: middle;
+}
+
+.weui-uploader__file {
+  margin: 0 16rpx 16rpx 0;
+  width: 188rpx;
+  height: 188rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+button::after {
+  border: none;
+}
+
+.weui-uploader__file .offer_img {
+  width: 42rpx;
+  height: 42rpx;
+  background: #d9d0b3;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  border-radius: 0 8rpx 0 70rpx;
+}
+
+.weui-uploader__file .offer_img image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 16rpx;
+  margin-top: 11rpx;
+}

@@ -1,0 +1,167 @@
+.find_wp {
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+  position: relative;
+}
+
+.top_background {
+  width: 100%;
+  height: 300rpx;
+  background: #0e948b;
+}
+
+.find_password {
+  width: 80%;
+  height: auto;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 14vh;
+  margin: auto;
+  padding: 30rpx 30rpx 100rpx 0;
+}
+
+.find_password_valid {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.find_title {
+  text-align: center;
+  line-height: 84rpx;
+  color: #333;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.find_frome {
+  margin: 30rpx 0;
+}
+
+.inp_item {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.inp_ios {
+  width: 54rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.inp_ios image {
+  width: 29rpx;
+  height: 29rpx;
+  margin: 0 auto;
+}
+
+.inp_inp {
+  flex: 1;
+}
+
+.inp_inp input {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+}
+
+button.get_auth {
+  width: 186rpx;
+  height: 100%;
+  color: #0e948b;
+  font-size: 30rpx;
+  padding: 0 20rpx;
+  border: none;
+  background: transparent;
+  line-height: 80rpx;
+  font-weight: normal;
+}
+
+.find_btn button {
+  width: 100%;
+  height: 70rpx;
+  background: #0e948b;
+  color: #fff;
+  border-radius: 50rpx;
+  font-weight: normal;
+  letter-spacing: 1rpx;
+  margin: 90rpx 0 20rpx 0;
+}
+
+.loginFind {
+  color: #666;
+  font-size: 28rpx;
+  display: flex;
+  width: 70%;
+  margin: 60rpx auto;
+}
+
+.loginFind view {
+  width: 50%;
+  text-align: center;
+}
+
+.loginFind .find {
+  color: #0e948b;
+}
+
+.loginFind .forget {
+  border-left: 2rpx solid #eee;
+}
+
+.shortcut {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortcut text {
+  padding: 0 20rpx;
+}
+
+.shortcut .xian {
+  width: 100rpx;
+  height: 2rpx;
+  background: #e5e5e5;
+}
+
+.short_way {
+  text-align: center;
+  margin: 20rpx 0 0 0;
+  position: relative;
+}
+
+.wx {
+  width: 64rpx;
+  height: 64rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.login-btn {
+  position: absolute;
+  left: 45%;
+  top: 0;
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.login-btn button {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 10rpx auto;
+  background: transparent;
+}

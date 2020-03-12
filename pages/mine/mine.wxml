@@ -1,0 +1,85 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine_wp">
+	<!-- 头部 -->
+	<view class="mine_top">
+		<!-- 登录信息 -->
+		<view class="login_wp">
+			<!-- 登录 -->
+			<view class="nick">
+				<!--登录状态下用户头像-->
+				<view wx:if="{{ isLogin }}" class="userinfo">
+					<view class="pic">
+						<image src="{{ imageUrl }}"></image>
+					</view>
+					<view class="text">
+						<view class="nickname">{{ nickName }}</view>
+					</view>
+				</view>
+				<!--未登录状态下用户头像-->
+				<view wx:else class="userinfo" catchtap="onLogin">
+					<view class="pic">
+						<image src="../../images/pic22.png"></image>
+					</view>
+					<view class="text">
+						<view class="nickname">立即登录</view>
+					</view>
+				</view>
+			</view>
+			<!-- 待支付金额 -->
+			<view class="store_Info">
+				<view class="store_h">{{userinfo.pay_total_money}}</view>
+				<view class="store_p">待支付金额(元)</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 存储信息 -->
+	<view class="cuncuInfo" bindtap="cuncuInfo">
+		<view class="left_cun">
+			<view class="price">{{userinfo.all_save_goods_num/1000}}</view>
+			<view class="title">总存储货物
+				<text>(吨)</text>
+			</view>
+		</view>
+		<!-- <view class="xian"></view> -->
+		<!-- <view class="right_cun">
+			<view class="price">2.06</view>
+			<view class="title">总存储包装
+				<text>(吨)</text>
+			</view>
+		</view> -->
+	</view>
+
+	<!-- 列表 -->
+	<view class="mine_list">
+		<view class="list_item">
+			<view class="nb" wx:for="{{ listData }}" wx:key="index" data-index="{{ index }}">
+				<navigator url="{{ item.navUrl }}">
+					<view>
+						<image src="{{ item.imgUrl }}" class="left_img"></image>
+						<view class="list_text">{{ item.text }}</view>
+					</view>
+					<image src="/images/jt_left.png" class="right_img"></image>
+				</navigator>
+			</view>
+		</view>
+	</view>
+	<view bindtap="showModal" class="sign_out">退出登录</view>
+
+	<!--屏幕背景变暗的背景  -->
+	<view class="commodity_screen" wx:if="{{showModalStatus}}"></view>
+
+	<!--弹出框-提交 -->
+	<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+		<view class="share_wp">
+			<view class="youxiao">
+				<image src="/images/hint.png"></image>
+				<view class="describe">确定退出登录吗？</view>
+				<view class="btns_share">
+					<view class="offer" bindtap="hideModalFinsh">取消</view>
+					<view class="off" bindtap="sign_out">退出</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

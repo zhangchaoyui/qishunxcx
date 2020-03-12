@@ -1,0 +1,49 @@
+<!--pages/helpTickling/helpTickling.wxml-->
+<view class="help_wp">
+
+  <!-- 问题及反馈 -->
+  <view class="text_input">
+
+    <view class="t">问题及反馈：</view>
+    <textarea placeholder="请描述您的问题与反馈，您的反馈会在24小时内得到答复。" maxlength="{{ max }}" bindinput="inputs" placeholder-style="color:#D2D2D2;" bindblur="textareaWay" value="{{ textareaValue }}"></textarea>
+    <view class="zi">{{ currentWordNumber|0 }}/{{ max }}</view>
+
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="phone">
+    <view> 联系方式：</view>
+    <input bindinput="contactWay" value="{{ contactValue }}"></input>
+  </view>
+
+  <!-- 添加图片 -->
+  <view class="add_img">
+    <view>添加图片：</view>
+
+    <view class="weui-uploader__bd">
+      <block wx:for="{{ image_list }}" wx:key="index">
+        <view class="weui-uploader__file">
+          <image mode='widthFix' class="weui-uploader__img" src="{{ item }}"></image>
+
+          <view class="offer_img" catchtap="offerOclick" data-index="{{ index }}">
+            <image src="/images/offer.png" mode='widthFix'></image>
+          </view>
+        </view>
+      </block>
+      <view class="weui-uploader__input-box">
+        <button class="weui-uploader__input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='chooseImage' name="images"></button>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 提交 -->
+  <view class="submit">
+    <view class="btns" bindtap="btns">提交</view>
+    <view class="ke_phone">
+      客服电话：{{ phone }}
+      <text bindtap="consult">马上咨询</text>
+    </view>
+  </view>
+
+</view>

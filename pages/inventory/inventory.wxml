@@ -1,0 +1,245 @@
+<!--pages/inventory/inventory.wxml-->
+<view class="inventory_wp">
+
+	<view class="inven_mine">
+
+		<!-- 标题 -->
+		<view class="mine_title">
+			出库提货
+		</view>
+
+		<view class="huwu_w" wx:for="{{ huoList }}" wx:key="index">
+			<view class="vaild">
+				<!-- 货物信息 -->
+				<view class="mine_hupwu_info">
+					<view class="outer_packing">
+						<text>*</text>选择提取的货品
+						<view class="have" bindtap="have" data-index="{{ index }}" data-type='0'>
+							<view class="title">货物</view>
+							<image wx:if="{{ !item.showImage }}" src="/images/check_a.png"></image>
+							<image wx:else src="/images/check.png"></image>
+						</view>
+						<!-- <view class="not_have" bindtap="notHave" data-index="{{ index }}" data-type="1">
+							<view class="title">外包装</view>
+							<image wx:if="{{ item.showAImage }}" src="/images/check_a.png"></image>
+							<image wx:else src="/images/check.png"></image>
+						</view> -->
+					</view>
+
+					<!-- <view class="item_s">
+						所选{{ item.showxz ? '货物' : '外包装'}}: {{ item.showxz ? item.cargoItem : item.wbz }}
+					</view> -->
+					<view class="item_s">
+						所选货物: {{item.cargoItem}}
+					</view>
+					<view class="hupwuList">
+						<view class="item_car" wx:for="{{ cargoData }}" wx:for-index="idx" wx:key="idx" bindtap="cargoItem" data-name="{{ item.goods.goods_name }}" data-weight="{{item.weight}}" data-cindex="{{idx}}" data-id="{{item.id}}" data-index="{{ index }}" data-goods_id="{{item.goods_id}}">{{ item.goods.goods_name }} {{item.cate_type==0?'正品':'副品'}}</view>
+					</view>
+					<!-- <view class="hupwuList" wx:else></view> -->
+
+					<!--<view class="hupwuList" wx:if="{{ item.showAImage }}">
+						<view class="item_car" wx:for="{{ waibz }}" wx:for-index="idx" wx:key="idx" bindtap="waibz" data-item="{{ item }}" data-index="{{ index }}" data-cindex="{{idx}}">{{ item }}</view>
+					</view>
+					<view class="hupwuList" wx:else></view> -->
+
+					<!-- 提货数量 -->
+					<!-- <view wx:if="{{ !item.showxz }}"> -->
+					<view>
+						<view class="outer_packing bo_n">
+							<text>*</text>提货数量
+							<input value="{{ item.allTValue }}" data-index="{{ index }}" bindinput="allTClick" type="digit"></input>吨
+						</view>
+						<view class="all_t">
+							当前所选外包装共存储{{item.allT }}吨，
+							<text bindtap="allT"  data-index="{{ index }}">全部提货</text>
+						</view>
+					</view>
+
+					<!-- 提货件数 -->
+					<!-- <view wx:else>
+						<view class="outer_packing bo_n">
+							<text>*</text>数量
+							<input value="{{ item.allJValue }}" data-index="{{ index }}" bindinput="allJClick" type="digit"></input>件
+						</view>
+						<view class="all_t">
+							当前所选外包装共{{ item.allJ }}件，
+							<text bindtap="allJ" data-index="{{ index }}">全部提货</text>
+						</view>
+					</view> -->
+				</view>
+			</view>
+
+			<view class="offer_img" wx:if="{{ index != 0 }}" data-index="{{ index }}" catchtap="huowItemClick">
+				<image src="/images/offer.png" mode='widthFix'></image>
+			</view>
+
+			<!-- 占位 -->
+			<view class="zhanwei"></view>
+		</view>
+
+		<!-- 添加货物 -->
+		<view class="s">
+			<view class="add_huowu vaild" bindtap="addClick">
+				<image src="/images/jia.png"></image>
+				<view>添加货物</view>
+			</view>
+		</view>
+
+		<!-- 占位 -->
+		<view class="zhanwei"></view>
+
+		<!-- 司机信息 -->
+		<view class="vaild">
+			<view class="mine_siji_info">
+
+				<view class="item">
+					<text>*</text>司机姓名
+					<input placeholder-class="place_class" placeholder="请填写司机姓名" value="{{ sijiNameValue }}" bindinput="sijiName"></input>
+				</view>
+
+				<view class="item">
+					<text>*</text>联系电话
+					<input placeholder-class="place_class" placeholder="请填写司机联系电话" value="{{ sijiPhoneValue }}" bindinput="sijiPhone" type="number"></input>
+				</view>
+
+				<view class="item">
+					<text>*</text>身份证号
+					<input placeholder-class="place_class" placeholder="请填写您的身份证号" value="{{ sijiIdValue }}" bindinput="sijiId" type="number"></input>
+				</view>
+
+				<view class="item">
+					<text>*</text>车型号
+					<input placeholder-class="place_class" placeholder="请填写车的型号" value="{{ sijiCareTyoeValue }}" bindinput="sijiCareTyoe"></input>
+				</view>
+
+				<view class="item">
+					<text>*</text>车牌号
+					<input placeholder-class="place_class" placeholder="请填写车牌号" value="{{ sijiCareMarkValue }}" bindinput="sijiCareMark"></input>
+				</view>
+
+				<view class="item_t item_a">
+					<text>*</text>驾驶证
+					<view class="item_wp">
+						<view class="perch_t" catchtap="jszClaceZImg">
+							<image class="perch_tshu" src="/images/jsz_z.png" mode='widthFix'></image>
+							<view>请上传驾驶证主页</view>
+
+							<image wx:if="{{ jszshowImgT }}" class="img" src="{{ image_jszZ }}"></image>
+							<view class="offer_img" wx:if="{{ image_jszZ && jszshowImgT }}" catchtap="offerjszClaceZ">
+								<image src="/images/offer.png" mode='widthFix'></image>
+							</view>
+						</view>
+						<view class="perch_t" catchtap="jszClaceFImg">
+							<image class="perch_tshu" src="/images/jsz_f.png" mode='widthFix'></image>
+							<view>请上传驾驶证副页</view>
+
+							<image wx:if="{{ jszshowImgTh }}" class="img" src="{{ image_jszF }}"></image>
+							<view class="offer_img" wx:if="{{ image_jszF && jszshowImgTh }}" catchtap="offerjszClaceF">
+								<image src="/images/offer.png" mode='widthFix'></image>
+							</view>
+						</view>
+					</view>
+
+				</view>
+
+				<view class="item_t item_a">
+					<text>*</text>行驶证
+
+					<view class="item_wp">
+						<view class="perch_t" catchtap="xszClaceZImg">
+							<image class="perch_tshu" src="/images/xsz_z.png" mode='widthFix'></image>
+							<view>请上传行驶证主页</view>
+
+							<image wx:if="{{ xszshowImgT }}" class="img" src="{{ image_xszZ }}"></image>
+							<view class="offer_img" wx:if="{{ image_xszZ && xszshowImgT }}" catchtap="offerxszClaceZ">
+								<image src="/images/offer.png" mode='widthFix'></image>
+							</view>
+						</view>
+						<view class="perch_t" catchtap="xszClaceFImg">
+							<image class="perch_tshu" src="/images/xsz_f.png" mode='widthFix'></image>
+							<view>请上传行驶证副页</view>
+
+							<image wx:if="{{ xszshowImgTh }}" class="img" src="{{ image_xszF }}"></image>
+							<view class="offer_img" wx:if="{{ image_xszF && xszshowImgTh }}" catchtap="offerxszClaceF">
+								<image src="/images/offer.png" mode='widthFix'></image>
+							</view>
+						</view>
+					</view>
+
+				</view>
+
+			</view>
+		</view>
+
+		<!-- 占位 -->
+		<view class="zhanwei"></view>
+
+		<!-- 备注 -->
+		<view class="vaild">
+			<view class="three">备注:
+				<view class="thre_wp">
+					<textarea wx-if="{{ showModeText }}" class="texttare" maxlength="{{ max }}" placeholder-class="place_three" bindinput="inputs" value="{{ currentWordValue }}"></textarea>
+					<text class="currentWordNumber">{{ currentWordNumber|0 }}/{{ max }}</text>
+				</view>
+			</view>
+		</view>
+
+		<!-- 占位 -->
+		<view class="zhanwei"></view>
+
+		<!-- 选择时间 -->
+		<view class="vaild">
+
+			<view class="fourth">
+				<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+					<view class="center">{{orderData}}</view>
+				</picker>
+			</view>
+
+		</view>
+
+		<!-- 占位 -->
+		<view class="zhanwei"></view>
+
+		<!--  提交 -->
+		<view class="vaild">
+			<view class="btn">
+				<view>温馨提示：您的货品优先放在租赁面积房内。</view>
+				<button bindtap="showModal">提交</button>
+			</view>
+		</view>
+
+		<!--屏幕背景变暗的背景  -->
+		<view class="commodity_screen" bindtap="backModel" wx:if="{{backModel}}"></view>
+
+		<!--弹出框-提交 -->
+		<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+			<view class="share_wp">
+				<view class="youxiao">
+					<image src="/images/hint.png"></image>
+					<view class="describe">入库存储信息提交之后，只能作废， 不可修改,确定要提交么？</view>
+					<view class="btns_share">
+						<view class="offer" bindtap="hideModal">取消</view>
+						<view class="off" bindtap="btnClick">确定提交</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<!--弹出框-提交 -->
+		<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatusFinsh}}">
+			<view class="share_wp">
+				<view class="youxiao">
+					<image src="/images/hint.png"></image>
+					<view class="describe">恭喜您已提交完成提货订单！</view>
+					<view class="btns_share">
+						<view class="offer" bindtap="returnIndex">返回首页</view>
+						<view class="off" bindtap="listClick">查看详情</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+
+</view>

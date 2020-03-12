@@ -1,0 +1,64 @@
+<view class="find_wp">
+
+	<!-- 背景颜色 -->
+	<view class="top_background"></view>
+
+	<!-- 登录框 -->
+	<view class="find_password">
+		<view class="find_password_valid">
+			<view class="find_title">账号登录</view>
+
+			<!-- 输入框 -->
+			<view class="find_frome">
+				<view class="inp_item">
+					<view class="inp_ios">
+						<image mode="widthFix" src="/images/phone.png"></image>
+					</view>
+					<view class="inp_inp">
+						<input type="number" placeholder="请输入您的手机号" value="{{ phone }}" bindinput="phone"></input>
+					</view>
+				</view>
+				<view class="inp_item">
+					<view class="inp_ios">
+						<image mode="widthFix" src="/images/password.png"></image>
+					</view>
+					<view class="inp_inp">
+						<input type="password" placeholder="请输入您的密码" value="{{ password }}" bindinput="password"></input>
+					</view>
+				</view>
+			</view>
+
+			<view class="find_btn ">
+				<button type="button" bindtap="butConfirm">登录</button>
+			</view>
+
+			<!-- 注册/找回 -->
+			<view class="loginFind">
+				<view class="find" bindtap="enroll">立即注册</view>
+				<view class="forget" bindtap="findPassword">忘记密码</view>
+			</view>
+
+			<view style="margin-top:140rpx;"></view>
+
+			<!-- 快捷登录 -->
+			<view class="shortcut">
+				<view class="cut_left xian"></view>
+				<text>快捷登录</text>
+				<view class="cut_right xian"></view>
+			</view>
+
+			<view class="short_way">
+
+
+				<view class="login-btn">
+					<button class="btn-normal" openType="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">
+						<image class="wx " src="/images/wx.png"></image>
+					</button>
+				</view>
+
+			</view>
+
+		</view>
+	</view>
+
+</view>

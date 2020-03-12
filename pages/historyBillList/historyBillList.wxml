@@ -1,0 +1,24 @@
+<!--pages/historyBillList/historyBillList.wxml-->
+<view class="history_wp">
+
+  <!-- 时间 -->
+  <view class="xz_time">
+    <view class="you">
+      <view class="xz_p">费用账单</view>
+      <view class="xz_xqing">单位:（元）</view>
+    </view>
+  </view>
+
+  <!-- 列表 -->
+  <view class="item" wx:for="{{ data }}" wx:key="index">
+
+    <view class="item_left">
+      <!-- <view>{{ item.time }}</view> -->
+      <text>{{ item.desc_text }}</text>
+    </view>
+
+    <view class="item_right">{{ item.cost_money }}</view>
+
+  </view>
+
+</view>

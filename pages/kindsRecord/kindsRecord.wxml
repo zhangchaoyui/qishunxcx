@@ -1,0 +1,28 @@
+<!--pages/kindsRecord/kindsRecord.wxml-->
+<view class="history_wp">
+
+	<!-- 时间 -->
+	<view class="xz_time">
+		<view class="you">
+			<view class="xz_p">{{data.info.name}}-{{data.info.cate_name}}</view>
+			<view class="xz_xqing">现存数量：{{data.info.weight/1000}}(吨)</view>
+		</view>
+	</view>
+
+	<!-- 列表 -->
+	<view class="item" wx:for="{{ dataList }}" wx:key="index">
+
+		<view class="item_left">
+			<image src="/images/tou_o.png" mode="widthFix" wx:if="{{item.put_pick==1||item.put_pick==2}}"></image>
+      <image src="/images/tou_t.png" mode="widthFix" wx:elif="item.put_pick==0"></image>
+			<view>
+				<view wx:if="{{item.put_pick==0}}">入库</view>
+				<view wx:elif="{{item.put_pick==1}}">出库</view>
+        <view wx:elif="{{item.put_pick==2}}">转移</view>
+				<text>{{ item.create_time }}</text>
+			</view>
+		</view>
+		<view class="item_right">{{ item.weight/1000 }}</view>
+	</view>
+
+</view>

@@ -1,0 +1,286 @@
+/* pages/home/home.wxss */
+@import "../../wxParse/wxParse.wxss";
+
+.home_wp {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/* 轮播图 */
+
+swiper {
+  height: 400rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 分类 */
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu_item {
+  width: 110rpx;
+  text-align: center;
+  padding: 30rpx 0;
+  margin: 0 25rpx;
+}
+
+.menu_item image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.menu_item view {
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  padding-top: 10rpx;
+}
+
+/* 公共标题 */
+
+.title_wp {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 26rpx;
+  padding-top: 40rpx;
+}
+
+.title_h {
+  color: #0e948b;
+  font-size: 36rpx;
+  font-weight: 550;
+  letter-spacing: 2rpx;
+  padding-bottom: 10rpx;
+}
+
+.title_p {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.title_div {
+  width: 56rpx;
+  height: 6rpx;
+  background-color: #d9d0b3;
+  margin: 10rpx auto;
+}
+
+/*  */
+
+.img_text {
+  width: 94%;
+  margin: 0 auto;
+  padding-bottom: 20rpx;
+}
+
+.img_text image {
+  width: 100%;
+  height: 100%;
+}
+
+.img_text view {
+  color: #666;
+  font-size: 28rpx;
+  padding-top: 10rpx;
+  text-indent: 56rpx;
+}
+
+/* 占位 */
+
+.perch {
+  width: 100%;
+  height: 16rpx;
+  background-color: #eee;
+}
+
+/* 公告资讯 */
+
+.advertising_wp {
+  padding-bottom: 40rpx;
+}
+
+.advertising_wp .title {
+  padding: 20rpx 0;
+}
+
+.advertising_wp .title .title_h {
+  color: #0e948b;
+  font-size: 36rpx;
+  font-weight: 550;
+  letter-spacing: 2rpx;
+  padding-bottom: 10rpx;
+  text-align: center;
+}
+
+.advertising_item {
+  width: 90%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #e5e5e5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 联系我们 */
+
+.relation_mine {
+  background: #eee;
+  padding-bottom: 40rpx;
+}
+
+.relation_mine .title {
+  padding: 20rpx 0;
+}
+
+.relation_mine .title .title_h {
+  color: #0e948b;
+  font-size: 36rpx;
+  font-weight: 550;
+  letter-spacing: 2rpx;
+  padding-bottom: 10rpx;
+  text-align: center;
+}
+
+.mine_info {
+  width: 90%;
+  font-size: 28rpx;
+  margin: 0 auto;
+}
+
+.info_item {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+/* 注册 */
+
+.comm_width {
+  width: 96rpx !important;
+  height: 96rpx !important;
+  border-radius: 100%;
+  background-color: #0e948b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0rpx 0rpx 20rpx 0rpx #000;
+  padding: 0;
+  font-weight: normal;
+}
+
+.comm_width image {
+  width: 28rpx;
+  height: 31rpx;
+}
+
+.comm_width view {
+  color: #fff;
+  font-size: 24rpx !important;
+  padding-top: 6rpx;
+}
+
+.sigin {
+  position: fixed;
+  bottom: 14%;
+  right: 4%;
+}
+
+/* 分享 */
+
+.share {
+  position: fixed;
+  bottom: 2%;
+  right: 4%;
+}
+
+/*使屏幕变暗  */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.commodity_attr_box {
+  width: 80%;
+  height: 325rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2000;
+  background: #fff;
+  padding: 20rpx 0;
+  border-radius: 25rpx;
+}
+
+.share_wp {
+  width: 96%;
+  background: #fff;
+  padding: 14rpx 0;
+  margin: auto;
+  border-radius: 20rpx;
+}
+
+.youxiao {
+  width: 76%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.share_wp image {
+  width: 93rpx;
+  height: 93rpx;
+}
+
+.share_wp .describe {
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+
+.share_wp .btns_share {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+}
+
+.share_wp .btns_share view {
+  width: 184rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 20rpx 0;
+}
+
+.share_wp .btns_share .offer {
+  color: #999;
+  background: #e5e5e5;
+}
+
+.share_wp .btns_share .off {
+  color: #fff;
+  background: #0e948b;
+}

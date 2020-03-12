@@ -1,0 +1,55 @@
+<!--pages/enroll/enroll.wxml-->
+<view class="find_wp">
+
+	<!-- 背景颜色 -->
+	<view class="top_background"></view>
+	<!-- 找回密码框 -->
+	<view class="find_password">
+		<view class="find_password_valid">
+			<view class="find_title">账号注册</view>
+			<view class="find_frome">
+				<view class="inp_item">
+					<view class="inp_ios">
+						<image mode="widthFix" src="/images/phone.png"></image>
+					</view>
+					<view class="inp_inp">
+						<input type="number" placeholder="请输入您的手机号" value="{{ phone }}" bindinput="phone"></input>
+					</view>
+				</view>
+
+				<view class="inp_item">
+					<view class="inp_ios">
+						<image mode="widthFix" src="/images/het.png"></image>
+					</view>
+					<view class="inp_inp">
+						<input type="text" placeholder="请填写您的合同单号" value="{{ contract }}" bindinput="contract"></input>
+					</view>
+				</view>
+
+				<view class="inp_item">
+					<view class="inp_ios">
+						<image mode="widthFix" src="/images/password.png"></image>
+					</view>
+					<view class="inp_inp">
+						<input type="password" placeholder="请设置您的密码" value="{{ password }}" bindinput="password"></input>
+					</view>
+				</view>
+
+				<view class="inp_item">
+					<view class="inp_ios">
+						<image mode="widthFix" src="/images/authCode.png"></image>
+					</view>
+					<view class="inp_inp">
+						<input type="number" placeholder="验证码" value="{{ authcode }}" bindinput="authcode"></input>
+					</view>
+					<button class='get_auth' bindtap='getVerificationCode' disabled='{{ disabled }}'>{{ codename }}</button>
+				</view>
+
+			</view>
+			<view class="find_btn ">
+				<button type="button" bindtap="butConfirm">注册</button>
+			</view>
+		</view>
+	</view>
+
+</view>

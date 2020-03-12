@@ -1,0 +1,10 @@
+<!--pages/advertising/advertising.wxml-->
+
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="about_mine">
+	<view class="title_h">{{ title }}</view>
+	<view class="title_p">
+		<template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+	</view>
+	<!-- <image src="/images/about.png" mode="widthFix"></image> -->
+</view>

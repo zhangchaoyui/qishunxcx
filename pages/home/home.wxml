@@ -1,0 +1,132 @@
+<!--pages/home/home.wxml-->
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="home_wp">
+	<!-- 轮播图 -->
+	<swiper indicator-dots="ture" indicator-color="#fff" indicator-active-color="#0E948B" autoplay>
+		<block wx:for="{{ advert }}" wx:key="index">
+			<swiper-item>
+				<image src="{{ imagUrlTop + item.image.filepath }}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+
+	<!-- 分类 -->
+	<view class="menu">
+		<view class="menu_item" wx:for="{{ menu }}" wx:key="index" data-url="{{ item.urls }}" bindtap="tabClick">
+			<image src="{{ item.imgUrl }}"></image>
+			<view>{{ item.title }}</view>
+		</view>
+	</view>
+
+	<!-- 公共标题 -->
+	<view class="title_wp">
+		<view class="title_h">奇顺云储</view>
+		<view class="title_p">值得托付的全渠道仓储一体化服务平台</view>
+		<view class="title_div"></view>
+	</view>
+
+	<!--  -->
+	<view class="img_text">
+		<template is="wxParse" data="{{wxParseData:qishun.nodes}}" />
+	</view>
+
+	<!-- 占位 -->
+	<view class="perch"></view>
+
+	<!-- 公共标题 -->
+	<view class="title_wp">
+		<view class="title_h">仓储服务</view>
+		<view class="title_p">值得托付的全渠道仓储一体化服务平台</view>
+		<view class="title_div"></view>
+	</view>
+
+	<!--  -->
+	<view class="img_text">
+		<template is="wxParse" data="{{wxParseData:cangchu.nodes}}" />
+	</view>
+
+	<!-- 占位 -->
+	<view class="perch"></view>
+
+	<!-- 公告资讯 -->
+	<view class="advertising_wp">
+
+		<!-- 头部 -->
+		<view class="title">
+			<view class="title_h">公告资讯</view>
+			<view class="title_div"></view>
+		</view>
+
+		<!-- 列表 -->
+		<view class="advertising_item" wx:for='{{ notices }}' wx:for-index='key' wx:key="key" data-articleId="{{ key }}" bindtap="articleClick">
+			{{ item }}
+		</view>
+
+	</view>
+
+	<!-- 联系我们 -->
+	<view class="relation_mine">
+
+		<!-- 头部 -->
+		<view class="title">
+			<view class="title_h">联系我们</view>
+			<view class="title_div"></view>
+		</view>
+
+		<!-- 信息 -->
+		<view class="mine_info">
+			<template is="wxParse" data="{{wxParseData:contact.nodes}}" />
+			 <!-- <view class="info_item">
+				<view class="top">公司：</view>
+				<view>山东奇顺物流有限公司</view>
+		</view>
+		<view class="info_item" bindtap="addresClick">
+			<view class="top">地址：</view>
+			<view>山东省临沂市临西十三路与大山路交汇处</view>
+		</view>
+		<view class="info_item" bindtap="phoneClick">
+			<view class="top">电话：</view>
+			<view>0539-XXXXXXX</view>
+		</view>
+		<view class="info_item">
+			<view class="top">QQ：</view>
+			<view>0539-XXXXXXX</view>
+		</view>
+		<view class="info_item">
+			<view class="top">微信：</view>
+			<view>0539-XXXXXXX</view>
+		</view> -->
+	</view>
+</view>
+
+<!-- 注册 -->
+<view class="sigin comm_width" bindtap="enroll">
+	<image src="/images/signIn.png" mode="widthFix"></image>
+	<view>注册</view>
+</view>
+
+<!-- 分享 -->
+<button open-type="share" class="share comm_width">
+	<image src="/images/share.png" mode="widthFix"></image>
+	<view>分享</view>
+</button>
+
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+
+<!--弹出框-提交 -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+	<view class="share_wp">
+		<view class="youxiao">
+			<image src="/images/hint.png"></image>
+			<view class="describe">您还没有登录，不能查看哟！</view>
+			<view class="btns_share">
+				<view class="offer" bindtap="hideModal">取消</view>
+				<view class="off" bindtap="btnClick">登录注册</view>
+			</view>
+		</view>
+	</view>
+
+</view>
+
+</view>

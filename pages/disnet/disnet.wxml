@@ -1,0 +1,5 @@
+<!--pages/disnet/disnet.wxml-->
+<view class="con">
+  <view class="title">{{ title }},{{ title }}</view>
+  <view class="cxjz">请检查您的网络,在重新进入小程序!</view>
+</view>

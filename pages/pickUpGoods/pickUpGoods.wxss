@@ -1,0 +1,605 @@
+/* pages/pickUpGoods/pickUpGoods.wxss */
+
+.pick_up_wp {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  float: left;
+}
+
+.warm_prompt {
+  color: #d9d0b3;
+  background-color: #fff;
+  padding: 20rpx 0 20rpx 30rpx;
+  font-size: 24rpx;
+}
+
+.mine_wp {
+  width: 94%;
+  margin: 40rpx auto;
+  background-color: #fff;
+}
+
+.tab_top {
+  width: 100%;
+  display: flex;
+  position: relative;
+  color: #999;
+  height: 2.5rem;
+  border-bottom: 6rpx #0e948b solid;
+}
+
+.tab_one {
+  width: 40%;
+  height: 0;
+  border-top: none;
+  border-bottom: 40px #cfebe8 solid;
+  border-right: transparent 30px solid;
+  border-left: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+}
+
+.tab_two {
+  width: 24%;
+  height: 0;
+  border-top: none;
+  border-bottom: 40px #cfebe8 solid;
+  border-left: transparent 30px solid;
+  border-right: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 70rpx;
+  padding-left: 30rpx;
+}
+
+.action {
+  width: 60%;
+  color: #fff;
+  border-bottom: 40px #0e948b solid;
+  z-index: 9;
+}
+
+.mine_wp .mine {
+  width: 100%;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.mine_wp .mine .item {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.mine_wp .mine .item text {
+  color: #ff1818;
+}
+
+.mine_wp .mine .item input {
+  margin-left: 30rpx;
+}
+
+.place_class {
+  color: #e5e5e5;
+  font-size: 28rpx;
+}
+
+.mine_wp .mine .item_t {
+  padding: 20rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.perch_t {
+  width: 250rpx;
+  height: 160rpx;
+  background-color: #eee;
+  margin-top: 20rpx;
+  text-align: center;
+  margin-right: 40rpx;
+  position: relative;
+}
+
+.perch_t image {
+  width: 145rpx;
+  height: 95rpx;
+  margin-bottom: 2rpx;
+}
+
+.perch_t view {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.perch_t .perch_tshu {
+  width: 145rpx;
+  height: 95rpx;
+  margin-top: 24rpx;
+  margin-bottom: 2rpx;
+}
+
+.perch_t .img {
+  position: absolute;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 250rpx;
+  height: 160rpx;
+  overflow: hidden;
+  border-radius: 8rpx;
+}
+
+.perch_t .offer_img {
+  width: 42rpx;
+  height: 42rpx;
+  background: #d9d0b3;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  border-radius: 0 8rpx 0 70rpx;
+}
+
+.perch_t .offer_img image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 10rpx;
+}
+
+.yzz_t {
+  width: 250rpx;
+  height: 180rpx;
+  background-color: #eee;
+  margin-top: 20rpx;
+  text-align: center;
+  margin-right: 40rpx;
+  position: relative;
+}
+
+.yzz_t view {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.yzz_t .you {
+  width: 145rpx;
+  height: 95rpx;
+  margin-top: 24rpx;
+  margin-bottom: 2rpx;
+}
+
+.yzz_t .img {
+  position: absolute;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 250rpx;
+  height: 180rpx;
+  overflow: hidden;
+  border-radius: 8rpx;
+}
+
+.yzz_t .offer_img {
+  width: 42rpx;
+  height: 42rpx;
+  background: #d9d0b3;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  border-radius: 0 8rpx 0 70rpx;
+}
+
+.yzz_t .offer_img image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 10rpx;
+}
+
+.item_t .item_wp {
+  display: flex;
+}
+
+.mine_wp .mine .p {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.btn {
+  padding: 50rpx 0;
+  width: 100%;
+}
+
+.btn button {
+  width: 100%;
+  color: #fff;
+  border-radius: 40rpx;
+  background-color: #0e948b;
+  font-weight: normal;
+  letter-spacing: 2rpx;
+}
+
+.btn view {
+  color: #999;
+  font-size: 28rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+
+.display_but {
+  padding: 50rpx 0;
+}
+
+.display_but button {
+  width: 100%;
+  color: #fff;
+  border-radius: 40rpx;
+  background-color: #747777;
+  font-weight: normal;
+  letter-spacing: 2rpx;
+}
+
+
+.vaild {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.one_wp {
+  position: relative;
+}
+
+.mine_wp .mine .item_a {
+  border: none;
+}
+
+/* .vaild_one {
+  width: 90%;
+  margin: 0 auto;
+} */
+
+.mine .vaild .one {
+  padding: 0 0 20rpx 0;
+}
+
+.mine .vaild .one .offer_img {
+  width: 42rpx;
+  height: 42rpx;
+  background: #d9d0b3;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  border-radius: 0 8rpx 0 70rpx;
+}
+
+.mine .vaild .one .offer_img image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 18rpx;
+  margin-bottom: 5rpx;
+}
+
+.tl_o {
+  padding-left: 20rpx;
+  color: #000;
+}
+
+.mine .vaild .one .item image {
+  width: 17rpx;
+  height: 10rpx;
+  margin: 16rpx 0 0 10rpx;
+}
+
+.mine .vaild .one .cargo {
+  width: 100%;
+  background-color: #d9d0b3;
+}
+
+.mine .vaild .one .place {
+  width: 100%;
+  display: flex;
+  background-color: #d9d0b3;
+}
+
+.mine .vaild .one .cargo .item_car {
+  padding: 10rpx 0rpx 10rpx 20rpx;
+}
+
+.mine .vaild .one .cargo .item_car::before {
+  content: "· ";
+}
+
+.mine .vaild .one .place .item_carplace {
+  padding: 10rpx 0rpx 10rpx 20rpx;
+  width: 100%;
+}
+
+.mine .vaild .one .place .item_carplace::before {
+  content: "· ";
+}
+
+.user_place {
+  width: 60%;
+  background: #f5f5f5;
+}
+
+.place_a {
+  width: 30%;
+}
+
+.user_item {
+  padding: 10rpx 0rpx 10rpx 20rpx;
+}
+
+.active {
+  background: #f5f5f5;
+}
+
+/* 占位 */
+
+.perch {
+  width: 100%;
+  height: 16rpx;
+  background-color: #eee;
+}
+
+.vaild .three {
+  display: flex;
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.thre_wp {
+  width: 82%;
+  height: 160rpx;
+  margin-left: 20rpx;
+  padding: 10rpx;
+  border: 1rpx solid #eee;
+}
+
+.texttare {
+  width: 100%;
+  height: 100rpx;
+}
+
+.currentWordNumber {
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  right: 36rpx;
+  bottom: 30rpx;
+}
+
+.place_three {
+  text-align: right;
+}
+
+.fourth .center {
+  padding: 30rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  text-align: center;
+}
+
+.huowu text {
+  color: #ff1818;
+}
+
+.item_t text {
+  color: #ff1818;
+}
+
+.outer_packing text {
+  color: #ff1818;
+}
+
+.huowu {
+  padding: 30rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.huowu input {
+  width: 20%;
+  /* margin: 0 20rpx; */
+  text-align: center;
+}
+
+.outer_packing {
+  padding: 30rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.outer_packing image {
+  width: 30rpx;
+  height: 30rpx;
+  padding-top: 6rpx;
+  margin-left: 10rpx;
+}
+
+.outer_packing .have {
+  margin-left: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.outer_packing .not_have {
+  margin-left: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.outer_xz {
+  width: 100%;
+  color: #333;
+  font-size: 24rpx;
+  background: rgba(217, 208, 179, 1);
+  margin-bottom: 20rpx;
+}
+
+.outer_xz .xz {
+  border: none;
+  padding: 10rpx;
+  display: block;
+}
+
+.outer_xz .xz_item {
+  display: flex;
+  padding: 10rpx 0 10rpx 20rpx;
+}
+
+.outer_xz .xz_item view {
+  padding-left: 10rpx;
+}
+
+.outer_xz .xz_item .inpu {
+  display: flex;
+}
+
+.outer_xz .xz_item .inpu input {
+  width: 100%;
+  color: #666666;
+  padding-left: 28rpx;
+  border: 1rpx solid #535353;
+}
+
+.add_huowu {
+  width: 100%;
+  height: 40rpx;
+  background: #d9d0b3;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+}
+
+.add_huowu image {
+  width: 27rpx;
+  height: 27rpx;
+  padding-right: 10rpx;
+}
+
+/*使屏幕变暗  */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+/*对话框 */
+
+.commodity_attr_box {
+  width: 80%;
+  height: 325rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 99999;
+  background: #fff;
+  padding: 20rpx 0;
+  border-radius: 25rpx;
+}
+
+.share_wp {
+  width: 96%;
+  background: #fff;
+  padding: 14rpx 0;
+  margin: auto;
+  border-radius: 20rpx;
+}
+
+.youxiao {
+  width: 76%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.share_wp image {
+  width: 93rpx;
+  height: 93rpx;
+}
+
+.share_wp .describe {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.share_wp .btns_share {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vh;
+}
+
+.share_wp .btns_share view {
+  width: 184rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 20rpx 0;
+}
+
+.share_wp .btns_share .offer {
+  color: #999;
+  background: #e5e5e5;
+}
+
+.share_wp .btns_share .off {
+  color: #fff;
+  background: #0e948b;
+}
+
+.title_s {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title_beizhu {
+  color: #ff1818;
+  font-size: 24rpx;
+  display: flex;
+}
+
+.title_beizhu image {
+  width: 32rpx;
+  height: 31rpx;
+  padding-top: 4rpx;
+  padding-right: 8rpx;
+}
+
+.title_btn {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.red_view {
+  color: #FF1818 !important;
+}
+
+.title_btn image {
+  width: 32rpx;
+  height: 31rpx;
+  padding-top: 4rpx;
+  padding-right: 8rpx;
+}

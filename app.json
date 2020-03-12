@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/login/login",
+    "pages/inventory/inventory",
+    "pages/pickUpGoods/pickUpGoods",
+    "pages/mine/mine",
+    "pages/storeList/storeList",
+    "pages/disnet/disnet",
+    "pages/findPassword/findPassword",
+    "pages/enroll/enroll",
+    "pages/datumInfo/datumInfo",
+    "pages/aboutMine/aboutMine",
+    "pages/helpTickling/helpTickling",
+    "pages/historyBill/historyBill",
+    "pages/historyBillList/historyBillList",
+    "pages/kindsRecord/kindsRecord",
+    "pages/cunchuList/cunchuList",
+    "pages/cunchuListDetails/cunchuListDetails",
+    "pages/loginAccredit/loginAccredit",
+    "pages/advertising/advertising"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0E948B",
+    "navigationBarTitleText": "奇顺云储",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#0E948B",
+    "borderStyle": "white",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "iconPath": "images/tab/home.png",
+        "selectedIconPath": "images/tab/home_a.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/pickUpGoods/pickUpGoods",
+        "iconPath": "images/tab/pickUpGoods.png",
+        "selectedIconPath": "images/tab/pickUpGoods_a.png",
+        "text": "存货"
+      },
+      {
+        "pagePath": "pages/inventory/inventory",
+        "iconPath": "images/tab/inventory.png",
+        "selectedIconPath": "images/tab/inventory_a.png",
+        "text": "提货"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/tab/mine.png",
+        "selectedIconPath": "images/tab/mine_a.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请点击确定"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
