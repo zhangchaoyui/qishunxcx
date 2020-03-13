@@ -42,7 +42,6 @@ Page({
       app.hintComifg("请输入正确的手机号");
       return false;
     };
-
     wx.showLoading({
       title: "正在登录",
       mask: true
@@ -54,26 +53,28 @@ Page({
           phone: phone,
           password: password
         }, res => {
-          app.hintComifg('登录成功~')
-          wx.getStorageSync('');
           wx.hideLoading();
-          wx.setStorageSync('token', res.data.token);
-          wx.setStorageSync("imageUrl", res.data.avatarUrl);
-          wx.setStorageSync("nickName", res.data.nickName);
-          wx.setStorageSync("user_enterpriseInfo", 0);
-          if (res.data.is_auth == 0) {
-            wx.setStorageSync("is_auth", true);
-          };
-          if (res.data.nickName == "") {
-            wx.setStorageSync("nickName", res.data.phone);
-          };
-          if (res.data.nickName == "") {
-            wx.setStorageSync("imageUrl", "../../images/pic22.png");
-          };
-          setTimeout(res => {
-            wx.switchTab({
-              url: "/pages/home/home"
-            });
+          app.hintComifg('登录成功~')
+          setTimeout(aa => {
+            wx.getStorageSync('');
+            wx.setStorageSync('token', res.data.token);
+            wx.setStorageSync("imageUrl", res.data.avatarUrl);
+            wx.setStorageSync("nickName", res.data.nickName);
+            wx.setStorageSync("user_enterpriseInfo", 0);
+            if (res.data.is_auth == 0) {
+              wx.setStorageSync("is_auth", true);
+            };
+            if (res.data.nickName == "") {
+              wx.setStorageSync("nickName", res.data.phone);
+            };
+            if (res.data.nickName == "") {
+              wx.setStorageSync("imageUrl", "../../images/pic22.png");
+            };
+            setTimeout(res => {
+              wx.switchTab({
+                url: "/pages/home/home"
+              });
+            }, 1500)
           }, 1500)
         })
       },

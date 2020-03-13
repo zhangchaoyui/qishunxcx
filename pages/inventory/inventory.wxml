@@ -30,10 +30,10 @@
 						所选{{ item.showxz ? '货物' : '外包装'}}: {{ item.showxz ? item.cargoItem : item.wbz }}
 					</view> -->
 					<view class="item_s">
-						所选货物: {{item.cargoItem}}
+						所选货物: {{item.cargoItem}} {{item.cate_name}} {{item.cate_type}} {{item.place_name}}
 					</view>
 					<view class="hupwuList">
-						<view class="item_car" wx:for="{{ cargoData }}" wx:for-index="idx" wx:key="idx" bindtap="cargoItem" data-name="{{ item.goods.goods_name }}" data-weight="{{item.weight}}" data-cindex="{{idx}}" data-id="{{item.id}}" data-index="{{ index }}" data-goods_id="{{item.goods_id}}">{{ item.goods.goods_name }} {{item.cate_type==0?'正品':'副品'}}</view>
+						<view class="item_car" wx:for="{{ cargoData }}" wx:for-index="idx" wx:key="idx" bindtap="cargoItem" data-name="{{ item.goods.goods_name }}" data-weight="{{item.weight}}" data-cindex="{{idx}}" data-id="{{item.id}}" data-index="{{ index }}" data-cate_name="{{item.cate.cate_name}}" data-place_name="{{item.region.place_name}}" data-goods_id="{{item.goods_id}}">{{ item.goods.goods_name }} {{item.cate_type==0?'正品':'副品'}} {{item.cate.cate_name}} {{item.region.place_name}}</view>
 					</view>
 					<!-- <view class="hupwuList" wx:else></view> -->
 
@@ -47,10 +47,10 @@
 					<view>
 						<view class="outer_packing bo_n">
 							<text>*</text>提货数量
-							<input value="{{ item.allTValue }}" data-index="{{ index }}" bindinput="allTClick" type="digit"></input>吨
+							<input value="{{ item.allTValue }}" type="digit" data-index="{{ index }}" bindinput="allTClick" type="digit"></input>吨
 						</view>
 						<view class="all_t">
-							当前所选外包装共存储{{item.allT }}吨，
+							当前所选货物共存储{{item.allT }}吨，
 							<text bindtap="allT"  data-index="{{ index }}">全部提货</text>
 						</view>
 					</view>

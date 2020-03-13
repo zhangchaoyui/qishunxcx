@@ -26,18 +26,22 @@ Page({
     type: 1, //出货类型
     huoList: [{
       // 选择提取的货品 
+      extant_goods_id:'',
       showImage: true,
       showAImage: true,
       showxz: true,
       wbz: "",
-      cargoItem: "",
+      cargoItem: "请选择货物信息",
       allTValue: "",
       allJValue: "",
       goods_id: '',
       pick_status: '',
       allT: "0",
       allJ: "0",
-      choose_id: 0
+      choose_id: 0,
+      cate_name: '',
+      cate_type: "",
+      place_name: ''
     }],
     // 上传驾驶证正面
     jszshowImgT: true,
@@ -91,7 +95,6 @@ Page({
 
   // 选择提取的货品    
   cargoItem(e) {
-    console.log(e, 222);
     var index = e.currentTarget.dataset.index,
       id = e.currentTarget.dataset.id,
       that = this;
@@ -105,9 +108,13 @@ Page({
         return false;
       }
     }
+
     this.data.huoList[index].allTValue = ''
     that.data.huoList[index].allT = e.currentTarget.dataset.weight / 1000
     that.data.huoList[index].cargoItem = e.currentTarget.dataset.name
+    that.data.huoList[index].cate_name = e.currentTarget.dataset.cate_name
+    that.data.huoList[index].cate_type = e.currentTarget.dataset.cate_type == 0 ? '正品' : '副品'
+    that.data.huoList[index].place_name = e.currentTarget.dataset.place_name
     that.data.huoList[index].choose_id = e.currentTarget.dataset.id
     that.data.huoList[index].goods_id = e.currentTarget.dataset.goods_id
     this.setData({
@@ -164,6 +171,9 @@ Page({
   allTClick(e) {
     var index = e.currentTarget.dataset.index;
     this.data.huoList[index].allTValue = e.detail.value;
+    if (e.detail.value > this.data.huoList[index].allT) {
+      this.data.huoList[index].allTValue = this.data.huoList[index].allT
+    }
     this.setData({
       huoList: this.data.huoList
     });
@@ -184,7 +194,7 @@ Page({
       showAImage: true,
       showxz: false,
       wbz: "",
-      cargoItem: "",
+      cargoItem: "请选择货物信息",
       allTValue: "",
       allJValue: "",
       goods_id: '',
@@ -192,6 +202,10 @@ Page({
       allT: "0",
       allJ: "0",
       choose_id: 0,
+      cate_name: '',
+      cate_type: "",
+      place_name: '',
+      extant_goods_id:''
     })
     this.setData({
       huoList: this.data.huoList
@@ -901,7 +915,7 @@ Page({
     driver.driving_permit2 = image_xszF;
     driver.idcard = sijiIdValue;
     driver.car_num = sijiCareMarkValue;
-    driver.cart_type = sijiCareTyoeValue
+    driver.car_type = sijiCareTyoeValue
 
     let fromData = [];
     for (let i in huoList) {
@@ -917,6 +931,7 @@ Page({
         data.weight = huoList[i].allJValue
       }
       data.pick_status = huoList[i].pick_status
+      data.extant_goods_id=huoList[i].choose_id
       fromData.push(data);
     }
 
@@ -1103,6 +1118,7 @@ Page({
         pick_status: '',
         allT: 0,
         allJ: 0,
+        extant_goods_id:''
       }],
     })
   }

@@ -18,7 +18,7 @@ Page({
     cargoData: ["日用塑料制品", "厨房卫浴", "塑料工艺品", " 一次性制品", " 亚克力制品", " 工农业塑件", " 医疗塑件", "可降解塑件"],
     // 产地
     placeData: ["国外", "国内", "自产"],
-    placeCure: null,
+    placeCure: 0,
     palceChild: '',
     userData: ["美国", "加拿大", "日本"],
     userData_gn: ["美国", "加拿大", "日本"],
@@ -77,13 +77,15 @@ Page({
       putShowTwo: false,
       // 外包装
       baoz: [],
+      // user_place:'',
     }],
     // 备注
     currentWordValue: "",
     showModeText: true,
     editUserList: [],
     butAuditText: "提交审核",
-    userStatus: 0
+    userStatus: 0,
+    // user_place:null,
   },
 
   // tab切换
@@ -139,7 +141,7 @@ Page({
       item = e.currentTarget.dataset.item,
       regionId = e.currentTarget.dataset.regionid;
     this.data.huowList[indexs].stairModel = item;
-    this.data.huowList[indexs].regionId = regionId;
+    // this.data.huowList[indexs].regionId = regionId;
     this.setData({
       huowList: this.data.huowList,
       placeCure: e.currentTarget.dataset.index,
@@ -166,10 +168,10 @@ Page({
       item = e.currentTarget.dataset.item,
       regionChildId = e.currentTarget.dataset.child;
     this.data.huowList[index].levelModel = item;
-    this.data.huowList[index].regionChildId = regionChildId;
+    this.data.huowList[index].regionId = regionChildId;
     this.setData({
       huowList: this.data.huowList,
-      placeCure: regionChildId
+      placeCure: e.currentTarget.dataset.idx,
     });
   },
 
@@ -1214,7 +1216,7 @@ Page({
       var obj = {};
       obj.goods_id = item.cargoId;
       obj.weight = item.ondDun;
-      obj.piece = item.regionChildId;
+      obj.piece = item.ondJian;
       obj.place_id = item.regionId;
       obj.cate_id = item.cateid;
       //console.log(obj);

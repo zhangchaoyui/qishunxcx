@@ -189,7 +189,7 @@
 							<text>*</text>产地
 							<image wx:if="{{ item.place }}" src="/images/jt_top.png" mode='widthFix'></image>
 							<image wx:else src="/images/jt_bottom.png" mode='widthFix'></image>
-							<view class="tl_o">{{ item.stairModel }} {{ item.levelModel }}</view>
+							<view class="tl_o">{{ item.levelModel }}</view>
 						</view>
 						<view class="place" wx:if="{{ item.place }}">
 							<view class="place_a">
