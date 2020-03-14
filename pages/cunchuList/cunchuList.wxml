@@ -34,7 +34,7 @@
 					</view>
 
 					<view class="items_mine_right">
-						<!-- <view class="btn copy" catchtap="orderCopy" data-id="{{item.id}}" data-status="0">复制</view> -->
+						<view class="btn copy" catchtap="orderCopy" data-id="{{item.id}}" data-status="0">复制</view>
 						<view class="btn cancellation" catchtap="abolish" data-id="{{item.id}}">作废</view>
 						<view class="btn details" bindtap="itemsClick" data-pick="0" data-id="{{item.id}}">查看详情</view>
 					</view>
@@ -119,7 +119,7 @@
 					</view>
 
 					<view class="items_mine_right">
-						<!--<view class="btn copy" catchtap="orderCopy" data-id="{{item.id}}" data-status="1">复制</view> -->
+						<view class="btn copy" catchtap="orderCopy" data-id="{{item.id}}" data-status="1">复制</view>
 						<view class="btn cancellation" catchtap="abolish" data-id="{{item.id}}">作废</view>
 						<view class="btn details" bindtap="itemsClick" data-pick="1" data-id="{{item.id}}">查看详情</view>
 					</view>

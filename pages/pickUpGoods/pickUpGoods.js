@@ -15,20 +15,20 @@ Page({
     currect: 0,
     pagehide: 0, //页面参数
     // 货物选择
-    cargoData: ["日用塑料制品", "厨房卫浴", "塑料工艺品", " 一次性制品", " 亚克力制品", " 工农业塑件", " 医疗塑件", "可降解塑件"],
+    cargoData: [],
     // 产地
-    placeData: ["国外", "国内", "自产"],
+    placeData: [],
     placeCure: 0,
     palceChild: '',
-    userData: ["美国", "加拿大", "日本"],
-    userData_gn: ["美国", "加拿大", "日本"],
-    userData_gw: ["北京", "山东", "山西", "南京"],
-    userData_zc: ["不知道", "不知道"],
+    userData: [],
+    userData_gn: [],
+    userData_gw: [],
+    userData_zc: [],
     placeItem: "",
     // 型号
-    versionData: ["EVA 14-2", "EVA 14-0.7", "EVA9-0.7", "V3110F", "V4110D"],
+    versionData: [],
     versionCure: null,
-    versionUserData: ["正品", "副品"], //产品型号子集
+    versionUserData: ['正品', '副品'], //产品型号子集
     versionItem: "",
     versionItemXh: "",
     showXz: true,
@@ -336,25 +336,7 @@ Page({
       putShow: true,
       putShowTwo: false,
       // 外包装
-      baoz: [{
-        id: 1,
-        pack_name: "木托",
-        pack_unit: 0,
-        status: 0,
-        mutuoValue: ""
-      }, {
-        id: 2,
-        pack_name: "塑托",
-        pack_unit: 0,
-        status: 0,
-        mutuoValue: ""
-      }, {
-        id: 3,
-        pack_name: "薄膜",
-        pack_unit: 1,
-        status: 0,
-        mutuoValue: ""
-      }]
+      baoz: []
     });
     this.setData({
       huowList: this.data.huowList
@@ -402,9 +384,6 @@ Page({
       sijiCareMarkValue: e.detail.value
     })
   },
-
-  // ******
-
   // 备注
   inputs: function (e) {
     // 获取输入框的内容
@@ -1498,30 +1477,11 @@ Page({
               putShow: true,
               putShowTwo: false,
               // 外包装
-              baoz: [{
-                id: 1,
-                pack_name: "木托",
-                pack_unit: 0,
-                status: 0,
-                mutuoValue: ""
-              }, {
-                id: 2,
-                pack_name: "塑托",
-                pack_unit: 0,
-                status: 0,
-                mutuoValue: ""
-              }, {
-                id: 3,
-                pack_name: "薄膜",
-                pack_unit: 1,
-                status: 0,
-                mutuoValue: ""
-              }]
+              baoz: []
             })
           }
 
           //复制功能
-          //console.log(huowList[i].baoz)
           for (let j in huowList[i].baoz) { //外包装
             //console.log('外包装内部');
             if (res.order.goods[i].pack_ids == this.data.huowList[i].baoz[j].id) {
@@ -1690,8 +1650,8 @@ Page({
    */
   onShow: function () {
     var _this = this,
-      token = wx.getStorageSync('token');
-    //console.log(this.data.pagehide)
+      token = wx.getStorageSync('token'),
+      copyID = wx.getStorageSync('copyID')
     if (this.data.pagehide == 0) {
       this.clearUser();
       if (!token) {
@@ -1725,23 +1685,6 @@ Page({
         }
       }
     }
-
-
-
-    //   if (wx.getStorageSync('copyID')) {
-    //     _this.setData({
-    //       currect: 1
-    //     });
-    //     // 获取存货信息
-    //     _this.getDateOrder();
-    //   } else {
-    //     // 获取企业信息
-    //     _this.getDateEditUser();
-    //     _this.setData({
-    //       auditCode: wx.getStorageSync('auditCode')
-    //     });
-    //   }
-    // };
   },
 
   /**
@@ -1780,7 +1723,6 @@ Page({
 
   //清楚用户操作信息
   clearUser() {
-    wx.removeStorageSync('copyID');
     this.setData({
       orderData: '请选择预计到货时间',
       currentWordValue: '',

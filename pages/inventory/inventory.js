@@ -26,7 +26,7 @@ Page({
     type: 1, //出货类型
     huoList: [{
       // 选择提取的货品 
-      extant_goods_id:'',
+      extant_goods_id: '',
       showImage: true,
       showAImage: true,
       showxz: true,
@@ -205,7 +205,7 @@ Page({
       cate_name: '',
       cate_type: "",
       place_name: '',
-      extant_goods_id:''
+      extant_goods_id: ''
     })
     this.setData({
       huoList: this.data.huoList
@@ -931,7 +931,7 @@ Page({
         data.weight = huoList[i].allJValue
       }
       data.pick_status = huoList[i].pick_status
-      data.extant_goods_id=huoList[i].choose_id
+      data.extant_goods_id = huoList[i].choose_id
       fromData.push(data);
     }
 
@@ -1006,8 +1006,9 @@ Page({
       });
     } else {
       if (this.data.pagehide == 0) {
-        this.getDeliveryinfo(); //获取提货基础信息
         this.clearUser();
+        this.getDeliveryinfo(); //获取提货基础信息
+
       }
     };
   },
@@ -1094,6 +1095,7 @@ Page({
       sijiIdValue: '',
       sijiCareTyoeValue: '',
       sijiCareMarkValue: '',
+      cargoData: {},
       jszZId: '',
       jszFId: '',
       xszZId: '',
@@ -1118,7 +1120,7 @@ Page({
         pick_status: '',
         allT: 0,
         allJ: 0,
-        extant_goods_id:''
+        extant_goods_id: ''
       }],
     })
   }

@@ -122,9 +122,9 @@ Page({
       wx.hideLoading();
       let data = res.data.data;
       for (let i in data) {
-        data[i].create_time = app.formatTimeTwo(data[i].create_time, 'M/D H:M')
+        data[i].create_time = app.formatTimeTwo(data[i].create_time, 'Y/M/D H:M')
         if (data[i].update_time != 0) {
-          data[i].update_time = app.formatTimeTwo(data[i].update_time, 'M/D H:M')
+          data[i].update_time = app.formatTimeTwo(data[i].update_time, 'Y/M/D H:M')
         }
       }
       this.setData({
