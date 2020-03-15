@@ -151,6 +151,17 @@ Page({
         // })
       }, 1200)
     })
+  },
 
-  }
+  
+  //预览单个图片
+  previewMoreImage(e) {
+    let src = e.currentTarget.dataset.src;
+    let urlarr = [];
+    urlarr.push(src)
+    wx.previewImage({
+      current: src,
+      urls: urlarr
+    })
+  },
 })

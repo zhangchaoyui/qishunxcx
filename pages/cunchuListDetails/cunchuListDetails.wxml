@@ -95,10 +95,10 @@
 					驾驶证
 					<view class="item_wp">
 						<view class="perch_t">
-							<image src="{{data.driver.driving_licence1}}" mode='widthFix'></image>
+							<image src="{{data.driver.driving_licence1}}" data-src="{{data.driver.driving_licence1}}" bindtap='previewMoreImage' mode='widthFix'></image>
 						</view>
 						<view class="perch_t">
-							<image src="{{data.driver.driving_licence2}}" mode='widthFix'></image>
+							<image src="{{data.driver.driving_licence2}}" data-src="{{data.driver.driving_licence2}}" bindtap='previewMoreImage' mode='widthFix'></image>
 						</view>
 					</view>
 				</view>
@@ -107,10 +107,10 @@
 					行驶证
 					<view class="item_wp">
 						<view class="perch_t">
-							<image src="{{data.driver.driving_permit1}}" mode='widthFix'></image>
+							<image src="{{data.driver.driving_permit1}}" data-src="{{data.driver.driving_permit1}}" bindtap='previewMoreImage' mode='widthFix'></image>
 						</view>
 						<view class="perch_t">
-							<image src="{{data.driver.driving_permit2}}" mode='widthFix'></image>
+							<image src="{{data.driver.driving_permit2}}" data-src="{{data.driver.driving_permit2}}" bindtap='previewMoreImage' mode='widthFix'></image>
 						</view>
 					</view>
 				</view>
