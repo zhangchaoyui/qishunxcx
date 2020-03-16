@@ -385,7 +385,7 @@ Page({
     })
   },
   // 备注
-  inputs: function(e) {
+  inputs: function (e) {
     // 获取输入框的内容
     var value = e.detail.value;
     // 获取输入框内容的长度
@@ -429,7 +429,7 @@ Page({
         });
         //console.log(_this.data.image_list, 1);
 
-        _this.data.image_list.forEach(function(filePath, fileKey) {
+        _this.data.image_list.forEach(function (filePath, fileKey) {
           wx.uploadFile({
             url: app.api_root + 'upload/upload',
             filePath: filePath,
@@ -438,7 +438,7 @@ Page({
               file: _this.data.image_list,
               token: wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 image_list: 'https://qishun.400539.com/' + result.src,
@@ -494,7 +494,7 @@ Page({
               file: _this.data.image_idZ,
               token: wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 image_idZ: 'https://qishun.400539.com/' + result.src,
@@ -552,7 +552,7 @@ Page({
               file: _this.data.image_idF,
               token: wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               //console.log(result, 7777);
               _this.setData({
@@ -612,7 +612,7 @@ Page({
               file: _this.data.image_jszZ,
               token: wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               //console.log(res);
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
@@ -668,7 +668,7 @@ Page({
               file: _this.data.image_jszF,
               token: wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 'jszFId': result.id
@@ -728,7 +728,7 @@ Page({
               file: _this.data.image_xszZ,
               token: wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 'xszZId': result.id
@@ -784,7 +784,7 @@ Page({
               file: _this.data.image_xszF,
               token: wx.getStorageSync('token')
             },
-            success: function(res) {
+            success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 'xszFId': result.id
@@ -807,7 +807,7 @@ Page({
 
   // 时间选择
   //value 改变时触发 change 事件
-  bindMultiPickerChange: function(e) {
+  bindMultiPickerChange: function (e) {
     var dateStr =
       this.data.multiArray[0][this.data.multiIndex[0]] +
       this.data.multiArray[1][this.data.multiIndex[1]] +
@@ -825,7 +825,7 @@ Page({
   },
 
   //某一列的值改变时触发
-  bindMultiPickerColumnChange: function(e) {
+  bindMultiPickerColumnChange: function (e) {
     var date = new Date();
     var year1 = date.getFullYear()
     var month1 = date.getMonth() + 1
@@ -894,7 +894,7 @@ Page({
   },
 
   //月份计算
-  surplusMonth: function(year) {
+  surplusMonth: function (year) {
     var date = new Date();
     var year2 = date.getFullYear()
     var month = date.getMonth() + 1
@@ -918,7 +918,7 @@ Page({
   },
 
   //天数计算
-  surplusDay: function(year, month, day) {
+  surplusDay: function (year, month, day) {
     var days = 31;
     var dayDatas = [];
     var date = new Date();
@@ -943,12 +943,12 @@ Page({
           days = 28;
           break;
         }
-      case 4:
-      case 6:
-      case 9:
-      case 11:
-        days = 30;
-        break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          days = 30;
+          break;
     }
     if (year == year2 && month == month2) {
       dayDatas.push(day + "日")
@@ -965,7 +965,7 @@ Page({
   },
 
   //隐藏对话框-提交
-  hideModal: function() {
+  hideModal: function () {
     // 隐藏遮罩层
     var animation = wx.createAnimation({
       duration: 200,
@@ -977,7 +977,7 @@ Page({
     this.setData({
       animationData: animation.export(),
     })
-    setTimeout(function() {
+    setTimeout(function () {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export(),
@@ -991,7 +991,7 @@ Page({
   },
 
   //显示对话框-提交
-  showModal: function() {
+  showModal: function () {
     // if (this.data.auditCode) {
     //   app.hintComifg("用户信息未审核完毕, 请等待审核");
     //   return false;
@@ -1008,7 +1008,7 @@ Page({
       animationData: animation.export(),
       showModalStatus: true
     })
-    setTimeout(function() {
+    setTimeout(function () {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export()
@@ -1024,7 +1024,7 @@ Page({
   // ---
 
   //隐藏对话框-提交
-  hideModalFinsh: function() {
+  hideModalFinsh: function () {
     // 隐藏遮罩层
     var animation = wx.createAnimation({
       duration: 200,
@@ -1036,7 +1036,7 @@ Page({
     this.setData({
       animationData: animation.export(),
     })
-    setTimeout(function() {
+    setTimeout(function () {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export(),
@@ -1049,7 +1049,7 @@ Page({
   },
 
   //显示对话框-提交
-  showModalFinsh: function() {
+  showModalFinsh: function () {
     // 显示遮罩层
     var animation = wx.createAnimation({
       duration: 200,
@@ -1062,7 +1062,7 @@ Page({
       animationData: animation.export(),
       showModalStatusFinsh: true
     })
-    setTimeout(function() {
+    setTimeout(function () {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export()
@@ -1155,7 +1155,7 @@ Page({
       sxw = this.data.sxw;
 
     // 信息未完善
-    if (sijiNameValue == undefined || sijiPhoneValue == undefined || sijiIdValue == undefined || sijiIdValue == undefined || sijiCareTyoeValue == undefined || sijiCareMarkValue == undefined || currentWordValue == undefined || jszZId == undefined || jszFId == undefined || xszZId == undefined || xszFId == undefined || nyr == undefined || sxw == undefined) {
+    if (sijiNameValue == undefined || sijiPhoneValue == undefined || sijiIdValue == undefined || sijiIdValue == undefined || sijiCareTyoeValue == undefined || sijiCareMarkValue == undefined || currentWordValue == undefined || jszZId == undefined || jszFId == undefined || xszZId == undefined || xszFId == undefined || nyr == undefined) {
       wx.showToast({
         title: '请完善信息',
         icon: 'none',
@@ -1164,9 +1164,9 @@ Page({
       return false;
     };
 
-    //console.log(sijiNameValue, sijiPhoneValue, sijiIdValue, sijiCareTyoeValue, jszZId, jszFId, xszZId, xszFId, nyr, sxw)
+    console.log(sijiNameValue, sijiPhoneValue, sijiIdValue, sijiCareTyoeValue, jszZId, jszFId, xszZId, xszFId, nyr, sxw)
     // 信息未完善
-    if (sijiNameValue == '' || sijiPhoneValue == '' || sijiIdValue == '' || sijiCareTyoeValue == '' || sijiCareMarkValue == '' || jszZId == '' || jszFId == '' || xszZId == '' || xszFId == '' || nyr == '' || sxw == '') {
+    if (sijiNameValue == '' || sijiPhoneValue == '' || sijiIdValue == '' || sijiCareTyoeValue == '' || sijiCareMarkValue == '' || jszZId == '' || jszFId == '' || xszZId == '' || xszFId == '' || nyr == '') {
       wx.showToast({
         title: '请完善信息',
         icon: 'none',
@@ -1222,7 +1222,7 @@ Page({
       goods.push(obj);
     });
 
-    //console.log(goods);
+    console.log(goods);
 
 
     if (nyr == undefined || nyr == '') {
@@ -1267,6 +1267,7 @@ Page({
     //console.log(dataList);
 
     app._post_form('put_order/putOrder', dataList, res => {
+      wx.removeStorageSync('copyID');
       //console.log(res);
       if (res.code == 1) {
         // 显示提交成功的弹框
@@ -1445,6 +1446,7 @@ Page({
   getDateOrder() {
     let data = {},
       huowList = this.data.huowList,
+      huowList2 = [],
       copy = wx.getStorageSync('copyID');
     if (copy && copy.status == 0) {
       data.order_id = copy.copyID;
@@ -1456,55 +1458,76 @@ Page({
       });
       if (copy && copy.status == 0) {
         for (let i in res.order.goods) {
-          if (huowList[i] == undefined || huowList[i] == {}) {
-            huowList.push({
-              cargoItem: "",
-              place: "",
-              stairModel: "",
-              levelModel: "",
-              versionItemXh: "",
-              versionItem: "",
-              ondDun: "",
-              ondJian: "",
-              outerPacking: "",
-              zhifang: 0, // 0 存放 1 卖掉
-              cargo: true,
-              place: false,
-              version: false,
-              showImage: false,
-              showAImage: true,
-              // 请选择置放方式
-              putShow: true,
-              putShowTwo: false,
-              // 外包装
-              baoz: []
-            })
-          }
-
+          huowList2.push({
+            cargoItem: "",
+            place: "",
+            stairModel: "",
+            levelModel: "",
+            versionItemXh: "",
+            versionItem: "",
+            ondDun: "",
+            ondJian: "",
+            outerPacking: "",
+            zhifang: 0, // 0 存放 1 卖掉
+            cargo: true,
+            place: false,
+            version: false,
+            showImage: false,
+            showAImage: true,
+            // 请选择置放方式
+            putShow: true,
+            putShowTwo: false,
+            // 外包装
+            baoz: res.pack
+          })
+          console.log(huowList2);
           //复制功能
-          for (let j in huowList[i].baoz) { //外包装
-            //console.log('外包装内部');
-            if (res.order.goods[i].pack_ids == this.data.huowList[i].baoz[j].id) {
-              huowList[i].baoz[j].status = 1
-              huowList[i].baoz[j].mutuoValue = res.order.goods[i].pack_nums
-              huowList[i].showAImage = true;
+          for (let j in huowList2[i].baoz) { //外包装
+            if (res.order.goods[i].pack_idss[j] != undefined) {
+              if (res.order.goods[i].pack_idss[j].id == huowList2[i].baoz[j].id) {
+                huowList2[i].baoz[j].status = 1;
+                huowList2[i].baoz[j].pack_unit = 0;
+                huowList2[i].baoz[j].mutuoValue = res.order.goods[i].pack_nums;
+              }
+            } else {
+              break;
             }
           }
-          huowList[i].cargoItem = res.order.goods[i].goods.goods_name //货物名称
-          huowList[i].stairModel = '' //产地
-          huowList[i].levelModel = res.order.goods[i].region.place_name //产地子集
-          huowList[i].versionItemXh = res.order.goods[i].cate.cate_name //型号
-          huowList[i].versionItem = res.order.goods[i].goods.cate_type == 0 ? '正品' : '副品'
-          huowList[i].ondDun = res.order.goods[i].weight / 1000        //吨数
-          huowList[i].ondJian = res.order.goods[i].piece //件数
+          if (res.order.goods[i].put_status) {
+            huowList2[i].putShow = false;
+            huowList2[i].putShowTwo = true;
+          } else {
+            huowList2[i].showAImage = true;
+            huowList2[i].showImage = false;
+          }
+          huowList2[i].showAImage = false;
+          huowList2[i].showImage = true;
+          huowList2[i].cargo = false;
+
+          huowList2[i].zhifang = res.order.goods[i].put_status;
+          huowList2[i].cargoItem = res.order.goods[i].goods.goods_name //货物名称
+          huowList2[i].stairModel = '' //产地
+          huowList2[i].levelModel = res.order.goods[i].region.place_name //产地子集
+          huowList2[i].versionItemXh = res.order.goods[i].cate.cate_name //型号
+          huowList2[i].versionItem = res.order.goods[i].goods.cate_type == 0 ? '正品' : '副品'
+          huowList2[i].ondDun = res.order.goods[i].weight / 1000 //吨数
+          huowList2[i].ondJian = res.order.goods[i].piece //件数
+
+          huowList2[i].cateid = res.order.goods[i].cate.id
+          huowList2[i].cargoId = res.order.goods[i].goods_id
+          huowList2[i].regionId = res.order.goods[i].place_id
         }
         let image_jszZ = [],
           image_jszF = [],
           image_xszZ = [],
           image_xszF = [],
           orderdata;
-        orderdata = app.formatTimeTwo(res.order.put_goods_time, 'Y-M-D')
+        orderdata = app.formatTimeTwo(res.order.put_goods_time, 'Y年M月D日');
+        let comment=res.order.comment
+        let currentWordNumber = parseInt(comment.length)
+
         this.setData({
+          huowList: huowList2,
           cate: res.cate,
           goods: res.goods,
           pack: Object.assign({}, packGai),
@@ -1525,7 +1548,9 @@ Page({
           jszFId: res.order.driver.driving_licence1_id,
           xszZId: res.order.driver.driving_permit1_id,
           xszFId: res.order.driver.driving_permit2_id,
-          orderData: orderdata //到货时间
+          orderData: orderdata, //到货时间
+          nyr: orderdata,
+          currentWordNumber: currentWordNumber
         });
       } else {
         this.setData({
@@ -1614,7 +1639,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var _this = this,
       date = new Date(),
       year = date.getFullYear(),
@@ -1641,14 +1666,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     var _this = this,
       token = wx.getStorageSync('token'),
       copyID = wx.getStorageSync('copyID')
@@ -1690,12 +1715,14 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {},
+  onHide: function () {
+    wx.removeStorageSync('copyID');
+  },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
     this.clearUser();
   },
 
@@ -1703,21 +1730,21 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 

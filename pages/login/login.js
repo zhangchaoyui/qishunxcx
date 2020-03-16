@@ -70,11 +70,9 @@ Page({
             if (res.data.nickName == "") {
               wx.setStorageSync("imageUrl", "../../images/pic22.png");
             };
-            setTimeout(res => {
               wx.switchTab({
                 url: "/pages/home/home"
               });
-            }, 1500)
           }, 1500)
         })
       },

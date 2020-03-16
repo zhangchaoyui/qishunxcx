@@ -455,7 +455,6 @@ Page({
     var value = e.detail.value;
     // 获取输入框内容的长度
     var len = parseInt(value.length);
-
     //最多字数限制
     if (len > this.data.max) return;
     // 当输入框内容的长度大于最大长度限制（max)时，终止setData()的执行
@@ -845,7 +844,7 @@ Page({
       sxw = this.data.sxw;
 
     // 信息未完善
-    if (sijiNameValue == undefined || sijiPhoneValue == undefined || sijiIdValue == undefined || sijiIdValue == undefined || sijiCareTyoeValue == undefined || sijiCareMarkValue == undefined || sijiCareMarkValue == undefined || image_jszZ == undefined || image_jszF == undefined || image_xszZ == undefined || image_xszF == undefined) {
+    if (sijiNameValue == undefined || sijiPhoneValue == undefined || sijiIdValue == undefined || sijiIdValue == undefined || sijiCareTyoeValue == undefined || sijiCareMarkValue == undefined || sijiCareMarkValue == undefined || image_jszZ == undefined || image_jszF == undefined || image_xszZ == undefined || image_xszF == undefined || nyr == undefined && nyr == "") {
       wx.showToast({
         title: '请完善用户信息',
         icon: 'none',
@@ -944,6 +943,7 @@ Page({
       'driver': JSON.stringify(driver)
     };
     app._post_form('pick_order/pickOrder', dataList, res => {
+      wx.removeStorageSync('copyID');
       //console.log(res);
       if (res.code == 1) {
         // 显示提交成功的弹框
@@ -1015,53 +1015,130 @@ Page({
 
   //获取提货基础信息
   getDeliveryinfo() {
-    app._get('pick_order/pickOrder', {}, res => {
-      console.log(res);
-      if (res.data.goods == [] || res.data.goods.length == 0) {
-        wx.showToast({
-          title: '您当前没有可提的货物~',
-          icon: 'none',
-          duration: 3000
-        });
-        return false;
-      }
-      if (res.data.goods.length == 0 && res.data.pack.length == []) {
-        this.setData({
-          allT: 0,
-          allJ: 0
-        })
-      } else {
+    let copy = wx.getStorageSync('copyID'),
+      data = {},
+      orderdata;
+    if (copy && copy.status == 1) {
+      data.order_id = copy.copyID;
+      app._get('pick_order/pickOrder', data, res => {
+        if (res.data.goods == [] || res.data.goods.length == 0) {
+          wx.showToast({
+            title: '您当前没有可提的货物~',
+            icon: 'none',
+            duration: 3000
+          });
+          return false;
+        }
         // 所选货物列表    
         let cargoData = [],
-          waibz = [];
+          waibz = [],
+          huoList = [];
+        //获取订单信息
+        for (let i in res.data.order.goods) {
+          huoList.push({
+            // 选择提取的货品 
+            extant_goods_id: '',
+            showImage: false,
+            showAImage: true,
+            showxz: true,
+            wbz: "",
+            cargoItem: '请选择货物类型',
+            allTValue: '',
+            allJValue: "",
+            goods_id: '',
+            pick_status: '',
+            allT: '',
+            allJ: "0",
+            choose_id: 0,
+            cate_name: '',
+            cate_type: '',
+            place_name: ''
+          });
+        }
         //获取提货基础信息
         for (let i in res.data.goods) {
           cargoData.push(res.data.goods[i]);
         }
-        //外包装信息
-        // for (let i in res.data.pack) {
-        //   waibz.push(res.data.pack[i].pack.pack_name);
-        // }
-        // console.log(cargoData);
+        let comment = res.data.order.comment
+        let currentWordNumber = parseInt(comment.length);
+
+        orderdata = app.formatTimeTwo(res.data.order.pick_goods_time, 'Y年M月D日')
         this.setData({
           cargoData: cargoData,
           waibz: waibz,
           shipmentData: res.data, //出货总信息
-          pack: res.data.pack
+          pack: res.data.pack,
+          huoList: huoList,
+          sijiNameValue: res.data.order.driver.driver_name, //订单司机姓名
+          sijiPhoneValue: res.data.order.driver.mobile, //订单司机联系电话
+          sijiIdValue: res.data.order.driver.idcard, //订单身份证号
+          sijiCareTyoeValue: res.data.order.driver.car_type, //订单司机车型号
+          sijiCareMarkValue: res.data.order.driver.car_num, //订单司机车牌号
+          currentWordValue: res.data.order.comment,
+          image_jszZ: res.data.order.driver.driving_licence1,
+          image_jszF: res.data.order.driver.driving_licence2,
+          image_xszZ: res.data.order.driver.driving_permit1,
+          image_xszF: res.data.order.driver.driving_permit2,
+          jszZId: res.data.order.driver.driving_licence1_id,
+          jszFId: res.data.order.driver.driving_licence1_id,
+          xszZId: res.data.order.driver.driving_permit1_id,
+          xszFId: res.data.order.driver.driving_permit2_id,
+          orderData: orderdata, //到货时间
+          nyr: orderdata,
+          currentWordNumber: currentWordNumber
         })
-      }
-    });
+      });
+    } else {
+      app._get('pick_order/pickOrder', data, res => {
+        if (res.data.goods == [] || res.data.goods.length == 0) {
+          wx.showToast({
+            title: '您当前没有可提的货物~',
+            icon: 'none',
+            duration: 3000
+          });
+          return false;
+        }
+        if (res.data.goods.length == 0 && res.data.pack.length == []) {
+          this.setData({
+            allT: 0,
+            allJ: 0
+          })
+        } else {
+          // 所选货物列表    
+          let cargoData = [],
+            waibz = [];
+          //获取提货基础信息
+          for (let i in res.data.goods) {
+            cargoData.push(res.data.goods[i]);
+          }
+          //外包装信息
+          // for (let i in res.data.pack) {
+          //   waibz.push(res.data.pack[i].pack.pack_name);
+          // }
+          this.setData({
+            cargoData: cargoData,
+            waibz: waibz,
+            shipmentData: res.data, //出货总信息
+            pack: res.data.pack,
+          })
+        }
+      });
+    }
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {},
+  onHide: function () {
+    wx.removeStorageSync('copyID');
+  },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    wx.removeStorageSync('copyID');
     this.clearUser();
   },
 
