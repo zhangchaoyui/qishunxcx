@@ -18,7 +18,6 @@ Page({
     app._get('index/getArticleInfo', {
       article_id: articleId
     }, (res) => {
-      console.log(res.data[0])
       this.setData({
         title: res.data[0].title,
         create_time: res.data[0].create_time,

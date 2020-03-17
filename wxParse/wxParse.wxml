@@ -361,7 +361,7 @@
   </view>
 </template>
 <template name="wxParseImg">
-  <image bindload="wxParseImgLoad" bindtap="wxParseImgTap" class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-idx="{{item.imgIndex}}" data-src="{{item.attr.src}}" mode="widthFix" src="https://qishun.400539.com/{{item.attr.src}}" style="width:{{item.width}}px;"></image>
+  <image class="{{item.classStr}} wxParse-{{item.tag}}" data-from="{{item.from}}" data-idx="{{item.imgIndex}}" data-src="{{item.attr.src}}" mode="widthFix" src="https://qishun.400539.com/{{item.attr.src}}" style="width:{{item.width}}px;"></image>
 </template>
 <template name="wxParseVideo">
   <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
