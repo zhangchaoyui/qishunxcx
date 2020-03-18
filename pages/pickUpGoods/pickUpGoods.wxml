@@ -241,15 +241,15 @@
 							<view class="outer_packing xz">
 								<text>*</text>请选择包装类别（可多选）并填写数量
 								<view class="xz_item" wx:for="{{ item.baoz }}" wx:for-item="ite" wx:for-index="idx" wx:key="idx">
-									<image wx:if="{{ ite.status == 1 }}" src="/images/checkblock_a.png"></image>
+									<image wx:if="{{ ite.status }}" src="/images/checkblock_a.png"></image>
 									<image wx:else src="/images/checkblock.png"></image>
 									<view bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">{{ ite.pack_name }}</view>
-									<view class="inpu" wx:if="{{ ite.pack_unit == 0 }}" bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">
-										<input bindinput="mutuo" name="" value="" data-indexs="{{ index }}" data-index="{{ idx }}"></input>
+									<view class="inpu" bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">
+										<input bindinput="mutuo" data-indexs="{{ index }}" data-index="{{ idx }}" data-id="{{item.id}}" value="{{ite.mutuoValue}}"></input>
 									</view>
-									<view class="inpu" wx:if="{{ ite.pack_unit == 1 }}" bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">
+									<!-- <view class="inpu" wx:if="{{ ite.pack_unit == 1 }}" bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">
 										<input bindinput="mutuo" value="" data-indexs="{{ index }}" data-index="{{ idx }}"></input>
-									</view>
+									</view> -->
 								</view>
 							</view>
 

@@ -232,11 +232,27 @@ Page({
 
   // 外包装
   have(e) {
-    var index = e.currentTarget.dataset.index;
+    var index = e.currentTarget.dataset.index,
+      huowList = this.data.huowList;
     this.data.huowList[index].showImage = true;
+    for (let i in huowList) {
+      for (let j in this.data.pack) {
+        if (huowList[i].baoz[j] != undefined) {
+          break;
+        } else {
+          let pack = {};
+          pack.id = this.data.pack[j].id
+          pack.status = false
+          pack.mutuoValue = ''
+          pack.pack_name = this.data.pack[j].pack_name
+          huowList[i].baoz[j] = pack
+        }
+      }
+    }
     this.setData({
       huowList: this.data.huowList
     });
+
     if (this.data.huowList[index].showImage) {
       this.data.huowList[index].showAImage = false;
       this.setData({
@@ -266,9 +282,9 @@ Page({
     let idx = e.currentTarget.dataset.idx,
       // 货物索引
       index = e.currentTarget.dataset.index,
+      id = e.currentTarget.dataset.id,
       huowList = this.data.huowList;
-
-    huowList[index].baoz[idx].status == 0 ? huowList[index].baoz[idx].status = 1 : huowList[index].baoz[idx].status = 0;
+    huowList[index].baoz[idx].status == false ? huowList[index].baoz[idx].status = true : huowList[index].baoz[idx].status = false;
     this.setData({
       huowList
     });
@@ -307,7 +323,8 @@ Page({
   // 木托件数 
   mutuo(e) {
     var indexsx = e.currentTarget.dataset.indexs,
-      index = e.currentTarget.dataset.index,that=this;
+      index = e.currentTarget.dataset.index,
+      that = this;
     that.data.huowList[indexsx].baoz[index].mutuoValue = e.detail.value;
 
     that.setData({
@@ -337,7 +354,7 @@ Page({
       putShow: true,
       putShowTwo: false,
       // 外包装
-      baoz: this.data.pack
+      baoz: []
     });
     this.setData({
       huowList: this.data.huowList
@@ -386,7 +403,7 @@ Page({
     })
   },
   // 备注
-  inputs: function (e) {
+  inputs: function(e) {
     // 获取输入框的内容
     var value = e.detail.value;
     // 获取输入框内容的长度
@@ -430,7 +447,7 @@ Page({
         });
         //console.log(_this.data.image_list, 1);
 
-        _this.data.image_list.forEach(function (filePath, fileKey) {
+        _this.data.image_list.forEach(function(filePath, fileKey) {
           wx.uploadFile({
             url: app.api_root + 'upload/upload',
             filePath: filePath,
@@ -439,7 +456,7 @@ Page({
               file: _this.data.image_list,
               token: wx.getStorageSync('token')
             },
-            success: function (res) {
+            success: function(res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 image_list: 'https://qishun.400539.com/' + result.src,
@@ -495,7 +512,7 @@ Page({
               file: _this.data.image_idZ,
               token: wx.getStorageSync('token')
             },
-            success: function (res) {
+            success: function(res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 image_idZ: 'https://qishun.400539.com/' + result.src,
@@ -553,7 +570,7 @@ Page({
               file: _this.data.image_idF,
               token: wx.getStorageSync('token')
             },
-            success: function (res) {
+            success: function(res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               //console.log(result, 7777);
               _this.setData({
@@ -613,7 +630,7 @@ Page({
               file: _this.data.image_jszZ,
               token: wx.getStorageSync('token')
             },
-            success: function (res) {
+            success: function(res) {
               //console.log(res);
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
@@ -669,7 +686,7 @@ Page({
               file: _this.data.image_jszF,
               token: wx.getStorageSync('token')
             },
-            success: function (res) {
+            success: function(res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 'jszFId': result.id
@@ -729,7 +746,7 @@ Page({
               file: _this.data.image_xszZ,
               token: wx.getStorageSync('token')
             },
-            success: function (res) {
+            success: function(res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 'xszZId': result.id
@@ -785,7 +802,7 @@ Page({
               file: _this.data.image_xszF,
               token: wx.getStorageSync('token')
             },
-            success: function (res) {
+            success: function(res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
                 'xszFId': result.id
@@ -808,7 +825,7 @@ Page({
 
   // 时间选择
   //value 改变时触发 change 事件
-  bindMultiPickerChange: function (e) {
+  bindMultiPickerChange: function(e) {
     var dateStr =
       this.data.multiArray[0][this.data.multiIndex[0]] +
       this.data.multiArray[1][this.data.multiIndex[1]] +
@@ -826,7 +843,7 @@ Page({
   },
 
   //某一列的值改变时触发
-  bindMultiPickerColumnChange: function (e) {
+  bindMultiPickerColumnChange: function(e) {
     var date = new Date();
     var year1 = date.getFullYear()
     var month1 = date.getMonth() + 1
@@ -895,7 +912,7 @@ Page({
   },
 
   //月份计算
-  surplusMonth: function (year) {
+  surplusMonth: function(year) {
     var date = new Date();
     var year2 = date.getFullYear()
     var month = date.getMonth() + 1
@@ -919,7 +936,7 @@ Page({
   },
 
   //天数计算
-  surplusDay: function (year, month, day) {
+  surplusDay: function(year, month, day) {
     var days = 31;
     var dayDatas = [];
     var date = new Date();
@@ -944,12 +961,12 @@ Page({
           days = 28;
           break;
         }
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-          days = 30;
-          break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        days = 30;
+        break;
     }
     if (year == year2 && month == month2) {
       dayDatas.push(day + "日")
@@ -966,7 +983,7 @@ Page({
   },
 
   //隐藏对话框-提交
-  hideModal: function () {
+  hideModal: function() {
     // 隐藏遮罩层
     var animation = wx.createAnimation({
       duration: 200,
@@ -978,7 +995,7 @@ Page({
     this.setData({
       animationData: animation.export(),
     })
-    setTimeout(function () {
+    setTimeout(function() {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export(),
@@ -992,7 +1009,7 @@ Page({
   },
 
   //显示对话框-提交
-  showModal: function () {
+  showModal: function() {
     // if (this.data.auditCode) {
     //   app.hintComifg("用户信息未审核完毕, 请等待审核");
     //   return false;
@@ -1009,7 +1026,7 @@ Page({
       animationData: animation.export(),
       showModalStatus: true
     })
-    setTimeout(function () {
+    setTimeout(function() {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export()
@@ -1025,7 +1042,7 @@ Page({
   // ---
 
   //隐藏对话框-提交
-  hideModalFinsh: function () {
+  hideModalFinsh: function() {
     // 隐藏遮罩层
     var animation = wx.createAnimation({
       duration: 200,
@@ -1037,7 +1054,7 @@ Page({
     this.setData({
       animationData: animation.export(),
     })
-    setTimeout(function () {
+    setTimeout(function() {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export(),
@@ -1050,7 +1067,7 @@ Page({
   },
 
   //显示对话框-提交
-  showModalFinsh: function () {
+  showModalFinsh: function() {
     // 显示遮罩层
     var animation = wx.createAnimation({
       duration: 200,
@@ -1063,7 +1080,7 @@ Page({
       animationData: animation.export(),
       showModalStatusFinsh: true
     })
-    setTimeout(function () {
+    setTimeout(function() {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export()
@@ -1476,21 +1493,34 @@ Page({
             putShow: true,
             putShowTwo: false,
             // 外包装
-            baoz: res.pack
+            baoz: []
           })
           console.log(huowList2);
           //复制功能
-          for (let j in huowList2[i].baoz) { //外包装
-            if (res.order.goods[i].pack_idss[j] != undefined) {
-              if (res.order.goods[i].pack_idss[j].id == huowList2[i].baoz[j].id) {
-                huowList2[i].baoz[j].status = 1;
-                huowList2[i].baoz[j].pack_unit = 0;
-                huowList2[i].baoz[j].mutuoValue = res.order.goods[i].pack_nums;
-              }
-            } else {
-              break;
-            }
-          }
+          console.log(3)
+          // for (let i in res.order.goods) {
+          //   for (let j in this.data.pack) {
+          //     if (res.order.goods[i].pack_idss[j] != undefined) {
+          //       if (res.order.goods[i].pack_idss[j].id == this.data.pack[j].id){
+          //         console.log(1)
+          //         let pack = {};
+          //         pack.status = true;
+          //         pack.pack_unit = 0;
+          //         pack.pack_name = this.data.pack[j].pack_name
+          //         pack.mutuoValue = res.order.goods[i].pack_idss[j].pack_nums;
+          //         huowList2[i].baoz[j] = pack
+          //       }else{
+          //         console.log(2)
+          //         let pack = {};
+          //         pack.status = false;
+          //         pack.pack_unit = 0;
+          //         pack.pack_name = this.data.pack[j].pack_name
+          //         pack.mutuoValue = 0;
+          //         huowList2[i].baoz[j] = pack
+          //       }
+          //     }
+          //   }
+          // }
           if (res.order.goods[i].put_status) {
             huowList2[i].putShow = false;
             huowList2[i].putShowTwo = true;
@@ -1501,7 +1531,6 @@ Page({
           huowList2[i].showAImage = false;
           huowList2[i].showImage = true;
           huowList2[i].cargo = false;
-
           huowList2[i].zhifang = res.order.goods[i].put_status;
           huowList2[i].cargoItem = res.order.goods[i].goods.goods_name //货物名称
           huowList2[i].stairModel = '' //产地
@@ -1510,7 +1539,6 @@ Page({
           huowList2[i].versionItem = res.order.goods[i].goods.cate_type == 0 ? '正品' : '副品'
           huowList2[i].ondDun = res.order.goods[i].weight / 1000 //吨数
           huowList2[i].ondJian = res.order.goods[i].piece //件数
-
           huowList2[i].cateid = res.order.goods[i].cate.id
           huowList2[i].cargoId = res.order.goods[i].goods_id
           huowList2[i].regionId = res.order.goods[i].place_id
@@ -1525,7 +1553,7 @@ Page({
         let currentWordNumber = parseInt(comment.length)
 
         this.setData({
-          huowList: huowList2,
+          // huowList: huowList2,
           cate: res.cate,
           goods: res.goods,
           // pack: Object.assign({}, packGai),
@@ -1549,15 +1577,15 @@ Page({
           orderData: orderdata, //到货时间
           nyr: orderdata,
           currentWordNumber: currentWordNumber,
-          sxw:res.order.am_and_pm
+          sxw: res.order.am_and_pm
         });
       } else {
+
         this.setData({
           cate: res.cate,
           goods: res.goods,
-          pack: Object.assign({}, packGai),
+          pack: res.pack,
           region: res.region,
-          'huowList[0].baoz': packGai,
           huowList: huowList
         });
       }
@@ -1638,7 +1666,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var _this = this,
       date = new Date(),
       year = date.getFullYear(),
@@ -1665,14 +1693,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     var _this = this,
       token = wx.getStorageSync('token'),
       copyID = wx.getStorageSync('copyID')
@@ -1714,14 +1742,14 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
     wx.removeStorageSync('copyID');
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
     this.clearUser();
   },
 
@@ -1729,21 +1757,21 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
