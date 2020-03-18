@@ -41,13 +41,13 @@
 				<text>(吨)</text>
 			</view>
 		</view>
-		<!-- <view class="xian"></view> -->
-		<!-- <view class="right_cun">
-			<view class="price">2.06</view>
-			<view class="title">总存储包装
+		<view class="xian"></view>
+		<view class="right_cun">
+			<view class="price">{{userinfo.extant_weight/1000}}</view>
+			<view class="title">现存货物
 				<text>(吨)</text>
 			</view>
-		</view> -->
+		</view>
 	</view>
 
 	<!-- 列表 -->

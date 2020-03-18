@@ -119,6 +119,11 @@
   width: 90%;
   margin: 0 auto;
 }
+.vaild2 {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #D9D0B3;
+}
 
 .all_t {
   color: #999;

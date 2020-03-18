@@ -307,10 +307,11 @@ Page({
   // 木托件数 
   mutuo(e) {
     var indexsx = e.currentTarget.dataset.indexs,
-      index = e.currentTarget.dataset.index;
-    this.data.huowList[indexsx].baoz[index].mutuoValue = e.detail.value;
-    this.setData({
-      huowList: this.data.huowList
+      index = e.currentTarget.dataset.index,that=this;
+    that.data.huowList[indexsx].baoz[index].mutuoValue = e.detail.value;
+
+    that.setData({
+      huowList: that.data.huowList
     });
   },
 
@@ -336,7 +337,7 @@ Page({
       putShow: true,
       putShowTwo: false,
       // 外包装
-      baoz: []
+      baoz: this.data.pack
     });
     this.setData({
       huowList: this.data.huowList
@@ -1164,7 +1165,6 @@ Page({
       return false;
     };
 
-    console.log(sijiNameValue, sijiPhoneValue, sijiIdValue, sijiCareTyoeValue, jszZId, jszFId, xszZId, xszFId, nyr, sxw)
     // 信息未完善
     if (sijiNameValue == '' || sijiPhoneValue == '' || sijiIdValue == '' || sijiCareTyoeValue == '' || sijiCareMarkValue == '' || jszZId == '' || jszFId == '' || xszZId == '' || xszFId == '' || nyr == '') {
       wx.showToast({
@@ -1198,7 +1198,6 @@ Page({
       obj.piece = item.ondJian;
       obj.place_id = item.regionId;
       obj.cate_id = item.cateid;
-      //console.log(obj);
       if (item.versionItem != "") {
         obj.cate_type = item.versionItem == "正品" ? 0 : 1;
       }
@@ -1206,23 +1205,22 @@ Page({
 
       // 选择包装
       obj.pack = [];
-      item.baoz.forEach((ite, key) => {
+      console.log(item.baoz)
+      for (let ii in item.baoz) {
         var packObj = {};
-        if (item.baoz[key].status == 1) {
-          if (ite.mutuoValue == '' || ite.mutuoValue == undefined) {
+        if (item.baoz[ii].status == 1) {
+          if (item.baoz[ii].mutuoValue == '' || item.baoz[ii].mutuoValue == undefined) {
             app.hintComifg('请输入外包装数量');
             return false;
           } else {
-            packObj.pack_id = ite.id;
-            packObj.pack_num = ite.mutuoValue;
+            packObj.pack_id = item.baoz[ii].id;
+            packObj.pack_num = item.baoz[ii].mutuoValue;
             obj.pack.push(packObj);
           }
         };
-      });
+      }
       goods.push(obj);
     });
-
-    console.log(goods);
 
 
     if (nyr == undefined || nyr == '') {
@@ -1523,16 +1521,16 @@ Page({
           image_xszF = [],
           orderdata;
         orderdata = app.formatTimeTwo(res.order.put_goods_time, 'Y年M月D日');
-        let comment=res.order.comment
+        let comment = res.order.comment
         let currentWordNumber = parseInt(comment.length)
 
         this.setData({
           huowList: huowList2,
           cate: res.cate,
           goods: res.goods,
-          pack: Object.assign({}, packGai),
+          // pack: Object.assign({}, packGai),
           region: res.region,
-          'huowList[0].baoz': packGai,
+          // 'huowList[0].baoz': packGai,
           order: res.order || [], //订单总数据
           sijiNameValue: res.order.driver.driver_name, //订单司机姓名
           sijiPhoneValue: res.order.driver.mobile, //订单司机联系电话
@@ -1550,7 +1548,8 @@ Page({
           xszFId: res.order.driver.driving_permit2_id,
           orderData: orderdata, //到货时间
           nyr: orderdata,
-          currentWordNumber: currentWordNumber
+          currentWordNumber: currentWordNumber,
+          sxw:res.order.am_and_pm
         });
       } else {
         this.setData({

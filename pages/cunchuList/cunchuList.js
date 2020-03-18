@@ -109,7 +109,7 @@ Page({
   getOderList() {
     let data = {},
       currtabMine = this.data.currtabMine,
-      type;
+      type=0;
     data.put_and_pick = this.data.currtab;
     if (currtabMine == 1) {
       type = 2

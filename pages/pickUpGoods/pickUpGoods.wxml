@@ -245,10 +245,10 @@
 									<image wx:else src="/images/checkblock.png"></image>
 									<view bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">{{ ite.pack_name }}</view>
 									<view class="inpu" wx:if="{{ ite.pack_unit == 0 }}" bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">
-										<input bindinput="mutuo" name="" value="{{ ite.mutuoValue }}" data-indexs="{{ index }}" data-index="{{ idx }}"></input>
+										<input bindinput="mutuo" name="" value="" data-indexs="{{ index }}" data-index="{{ idx }}"></input>
 									</view>
 									<view class="inpu" wx:if="{{ ite.pack_unit == 1 }}" bindtap="xzItem" data-idx="{{ idx }}" data-index="{{ index }}">
-										<input bindinput="mutuo" value="{{ ite.mutuoValue }}" data-indexs="{{ index }}" data-index="{{ idx }}"></input>
+										<input bindinput="mutuo" value="" data-indexs="{{ index }}" data-index="{{ idx }}"></input>
 									</view>
 								</view>
 							</view>
@@ -387,8 +387,7 @@
 			<view class="perch"></view>
 
 			<!-- 选择时间 -->
-			<view class="vaild">
-
+			<view class="vaild2">
 				<view class="fourth">
 					<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
 						<view class="center">{{orderData}}</view>

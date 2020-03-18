@@ -17,14 +17,14 @@
 				<view class="outer_packing" wx:if="{{pick==0}}">
 					产地：{{item.region.place_name}}
 				</view>
-				<view class="outer_packing" wx:elif="{{pick==0}}">
+				<view class="outer_packing" wx:if="{{pick==0}}">
 					型号：{{data.goods[0].cate.cate_name}} {{data.goods[0].cate_type==0? '正品':'副品'}}
 				</view>
 				<!-- 货物数量 -->
 				<view class="huowu">
 					货物数量
 					<input placeholder-class="place_class" placeholder="{{item.weight/1000}}" disabled="true"></input>吨
-					<!-- <input placeholder-class="place_class" placeholder="{{data.goods[0].piece}}"></input>件 -->
+					<input placeholder-class="place_class" placeholder="{{item.piece}}"></input>件
 				</view>
 				<!-- 外包装 -->
 				<view class="outer_packing">

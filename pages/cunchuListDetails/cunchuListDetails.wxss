@@ -14,7 +14,7 @@ page {
 
 .youxiao_wp {
   width: 94%;
-  margin: 0 auto;
+  margin: 20rpx auto 0;
 }
 
 .mine_title {
@@ -113,10 +113,9 @@ page {
 }
 
 .mine_siji_info .item {
-  padding: 20rpx 10rpx;
+  padding: 30rpx 10rpx;
   border-bottom: 1rpx solid #eee;
   display: flex;
-  margin-top: 20rpx;
 }
 
 .mine_siji_info .item text {

@@ -11,7 +11,6 @@
 
 	<!-- 列表 -->
 	<view class="item" wx:for="{{ dataList }}" wx:key="index">
-
 		<view class="item_left">
 			<image src="/images/tou_o.png" mode="widthFix" wx:if="{{item.put_pick==1||item.put_pick==2}}"></image>
       <image src="/images/tou_t.png" mode="widthFix" wx:elif="item.put_pick==0"></image>
@@ -22,7 +21,6 @@
 				<text>{{ item.create_time }}</text>
 			</view>
 		</view>
-		<view class="item_right">{{ item.weight/1000 }}</view>
+		<view class="item_right">{{ item.weight/1000 }}吨</view>
 	</view>
-
 </view>
