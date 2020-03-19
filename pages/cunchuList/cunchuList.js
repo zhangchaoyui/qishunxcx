@@ -109,7 +109,7 @@ Page({
   getOderList() {
     let data = {},
       currtabMine = this.data.currtabMine,
-      type=0;
+      type = 0;
     data.put_and_pick = this.data.currtab;
     if (currtabMine == 1) {
       type = 2
@@ -146,7 +146,7 @@ Page({
       })
       //返回上一页
       setTimeout(res => {
-       this.onShow();
+        this.onShow();
       }, 2000)
       // that.getOderList();
     })

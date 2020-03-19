@@ -18,33 +18,37 @@
 					产地：{{item.region.place_name}}
 				</view>
 				<view class="outer_packing" wx:if="{{pick==0}}">
-					型号：{{data.goods[0].cate.cate_name}} {{data.goods[0].cate_type==0? '正品':'副品'}}
+					型号：{{item.cate.cate_name}} {{item.cate_type==0? '正品':'副品'}}
 				</view>
 				<!-- 货物数量 -->
-				<view class="huowu">
+				<view class="huowu" wx:if="{{pick!=1}}">
 					货物数量
 					<input placeholder-class="place_class" placeholder="{{item.weight/1000}}" disabled="true"></input>吨
-					<input placeholder-class="place_class" placeholder="{{item.piece}}"></input>件
+					<input placeholder-class="place_class" placeholder="{{item.piece}}" disabled="true" ></input>件
+				</view>
+					<view class="huowu" wx:else>
+					货物数量
+					<input placeholder-class="place_class" placeholder="{{item.weight/1000}}" disabled="true"></input>吨
 				</view>
 				<!-- 外包装 -->
-				<view class="outer_packing">
+				<view class="outer_packing" wx:if="{{pick!=1}}">
 					外包装
 					<view class="have">
 						<view class="title">有</view>
-						<image wx:if="{{ data.goods[0].pack_idss }}" src="/images/check_a.png"></image>
+						<image wx:if="{{ item.pack_idss.length>0 }}" src="/images/check_a.png"></image>
 						<image wx:else src="/images/check.png"></image>
 					</view>
 					<view class="not_have">
 						<view class="title">无</view>
-						<image wx:if="{{ ! data.goods[0].pack_idss }}" src="/images/check_a.png"></image>
+						<image wx:if="{{ item.pack_idss.length==0  }}" src="/images/check_a.png"></image>
 						<image wx:else src="/images/check.png"></image>
 					</view>
 				</view>
 				<!-- 外包装数量 -->
-				<view class="outer_xz" wx:if="{{ data.goods[0].pack_idss }}">
+				<view class="outer_xz" wx:if="{{item.pack_idss.length>0&&pick==0 }}">
 					<view class="outer_packing xz">
 						包装类别
-						<view class="xz_item" wx:for="{{ data.goods[0].pack_idss }}">
+						<view class="xz_item" wx:for="{{item.pack_idss }}">
 							<image src="/images/checkblock_a.png"></image>
 							<view>{{ item.pack_name }}</view>
 							<view class="inpu">
@@ -54,7 +58,7 @@
 					</view>
 					<view class="outer_packing xz">
 						是否卖掉
-						<view class="xz_item" wx:if="{{ data.goods[0].put_status==0 }}">
+						<view class="xz_item" wx:if="{{ item.put_status==0 }}">
 							<image src="/images/checkblock_a.png"></image>
 							<view>否</view>
 						</view>
@@ -118,7 +122,7 @@
 		</view>
 
 		<view class="mine_yuji_time">
-			<view class="youxiao_wp">
+			<view class="youxiao_wp2">
 				<view>预计到货时间：{{time}} {{data.am_and_pm}}</view>
 				<!-- <view>入库人：王利</view>
 				<view>入库时间：{{data.update_time}}</view> -->

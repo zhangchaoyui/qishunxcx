@@ -215,7 +215,8 @@
 					<view class="describe">入库存储信息提交之后，只能作废， 不可修改,确定要提交么？</view>
 					<view class="btns_share">
 						<view class="offer" bindtap="hideModal">取消</view>
-						<view class="off" bindtap="btnClick">确定提交</view>
+						<view class="off" wx:if="{{button_change}}" bindtap="btnClick">确定提交</view>
+						<view class="off" wx:else>确定提交</view>
 					</view>
 				</view>
 			</view>

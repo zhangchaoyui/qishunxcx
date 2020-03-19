@@ -38,11 +38,29 @@
   width: 94%;
   display: flex;
   justify-content: space-around;
+  flex: 4;
   align-items: center;
   color: #666;
   font-size: 26rpx;
   padding: 20rpx 0;
   border-bottom: 1rpx solid #e5e5e5;
+}
+
+.item .one>view:first-child {
+  width: 30%;
+}
+
+.item .one>view:nth-child(1) {
+  width: 18%;
+}
+
+.item .one>view:nth-child(2) {
+  width: 15%;
+  padding-left: 5%;
+}
+.item .one>view:nth-child(3) {
+  width: 16%;
+  padding-left: 2%;
 }
 
 .item .img {

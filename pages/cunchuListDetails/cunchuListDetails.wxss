@@ -14,7 +14,11 @@ page {
 
 .youxiao_wp {
   width: 94%;
-  margin: 20rpx auto 0;
+  margin: 0rpx auto 0;
+}
+.youxiao_wp2 {
+  width: 94%;
+  margin: 0 auto 0;
 }
 
 .mine_title {
@@ -27,7 +31,7 @@ page {
 }
 
 .mine_hupwu_info {
-  padding-bottom: 20rpx;
+  /* padding-bottom: 20rpx; */
   background: #fff;
 }
 

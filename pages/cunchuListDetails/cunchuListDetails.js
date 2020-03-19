@@ -20,7 +20,7 @@ Page({
       pick: options.pick
     })
     if (options.pick == 0) {
-      app._post_form('wk_affirm_order/getPutOrderInfo', data, res => {
+      app._post_form('/user/getPutOrderInfo', data, res => {
         let hours = app.formatTimeTwo(res.data.data.put_goods_time, 'h');
         if (hours < 12) {
           str = '上午';
@@ -50,7 +50,7 @@ Page({
 
       })
     } else {
-      app._post_form('wk_affirm_order/getPickOrderInfo', data, res => {
+      app._post_form('/user/getPickOrderInfo', data, res => {
         res.data.data.update_time = app.formatTimeTwo(res.data.data.update_time, 'M/D')
         let time = app.formatTimeTwo(res.data.data.pick_goods_time, 'Y/M/D');
         if (res.data.data.goods[0].pack_nums > 0) {

@@ -52,7 +52,8 @@ Page({
     // 上传行驶证正反面
     xszshowImgTh: true,
     showModeText: true,
-    order_id: ''
+    order_id: '',
+    button_change:false
   },
 
   // 显示选择提取的货品 
@@ -828,6 +829,10 @@ Page({
 
   // 确定提交
   btnClick() {
+    this.setData({
+      button_change: false
+    })
+
     var sijiNameValue = this.data.sijiNameValue,
       sijiPhoneValue = this.data.sijiPhoneValue,
       sijiIdValue = this.data.sijiIdValue,
@@ -850,6 +855,9 @@ Page({
         icon: 'none',
         duration: 1000
       })
+      this.setData({
+        button_change: true
+      })
       return false;
     };
     // 信息未完善
@@ -858,6 +866,9 @@ Page({
         title: '请完善用户信息',
         icon: 'none',
         duration: 1000
+      })
+      this.setData({
+        button_change: true
       })
       return false;
     };
@@ -870,6 +881,9 @@ Page({
         icon: 'none',
         duration: 1000
       });
+      this.setData({
+        button_change: true
+      })
       return false;
     };
 
@@ -881,11 +895,17 @@ Page({
         icon: 'none',
         duration: 1000
       });
+      this.setData({
+        button_change: true
+      })
       return false;
     };
 
     if (nyr == undefined || nyr == '') {
       app.hintComifg('请输入预计到货时间');
+      this.setData({
+        button_change: true
+      })
       return false;
     } else {
       var year = nyr.split('年'),
@@ -921,6 +941,9 @@ Page({
       let data = {};
       if (huoList[i].goods_id == '') {
         app.hintComifg('请输入货品~');
+        this.setData({
+          button_change: true
+        })
         return false;
       }
       data.goods_id = huoList[i].goods_id
@@ -948,6 +971,9 @@ Page({
       if (res.code == 1) {
         // 显示提交成功的弹框
         this.showModalFinsh();
+        this.setData({
+          button_change: true
+        })
       };
     });
   },
