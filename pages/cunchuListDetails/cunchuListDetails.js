@@ -51,8 +51,14 @@ Page({
       })
     } else {
       app._post_form('/user/getPickOrderInfo', data, res => {
+        let hours = app.formatTimeTwo(res.data.data.pick_goods_time, 'h');
+        if (hours < 12) {
+          str = '上午';
+        } else {
+          str = '下午';
+        }
+        let time = app.formatTimeTwo(res.data.data.pick_goods_time, 'Y/M/D') + '   ' + str;
         res.data.data.update_time = app.formatTimeTwo(res.data.data.update_time, 'M/D')
-        let time = app.formatTimeTwo(res.data.data.pick_goods_time, 'Y/M/D');
         if (res.data.data.goods[0].pack_nums > 0) {
           let showImage = true
           this.setData({

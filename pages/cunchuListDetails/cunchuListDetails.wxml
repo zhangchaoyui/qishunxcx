@@ -123,7 +123,7 @@
 
 		<view class="mine_yuji_time">
 			<view class="youxiao_wp2">
-				<view>预计到货时间：{{time}} {{data.am_and_pm}}</view>
+				<view>预计到货时间：{{time}} </view>
 				<!-- <view>入库人：王利</view>
 				<view>入库时间：{{data.update_time}}</view> -->
 			</view>

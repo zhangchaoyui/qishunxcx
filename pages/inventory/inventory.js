@@ -53,7 +53,7 @@ Page({
     xszshowImgTh: true,
     showModeText: true,
     order_id: '',
-    button_change:false
+    button_change:true
   },
 
   // 显示选择提取的货品 
@@ -808,7 +808,8 @@ Page({
     this.hideModal();
     this.hideModalFinsh();
     this.setData({
-      pagehide: 0
+      pagehide: 0,
+      button_change:true
     })
     wx.switchTab({
       url: "/pages/home/home"
@@ -820,7 +821,8 @@ Page({
     this.hideModal();
     this.hideModalFinsh();
     this.setData({
-      pagehide: 0
+      pagehide: 0,
+      button_change:true
     })
     wx.navigateTo({
       url: '/pages/cunchuList/cunchuList',
@@ -1090,6 +1092,7 @@ Page({
 
         orderdata = app.formatTimeTwo(res.data.order.pick_goods_time, 'Y年M月D日')
         this.setData({
+          button_change:true,
           cargoData: cargoData,
           waibz: waibz,
           shipmentData: res.data, //出货总信息

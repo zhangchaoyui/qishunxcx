@@ -393,12 +393,10 @@
 						<view class="center">{{orderData}}</view>
 					</picker>
 				</view>
-
 			</view>
 
 			<!-- 占位 -->
 			<view class="perch"></view>
-
 			<view class="vaild">
 				<view class="btn">
 					<view>温馨提示：您的货品优先放在租赁面积房内。</view>
@@ -409,10 +407,8 @@
 
 		<!--屏幕背景变暗的背景  -->
 		<view class="commodity_screen" wx:if="{{backModel}}"></view>
-
 		<!--弹出框-提交 -->
 		<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
-
 			<view class="share_wp">
 				<view class="youxiao">
 					<image src="/images/hint.png"></image>
@@ -424,7 +420,6 @@
 					</view>
 				</view>
 			</view>
-
 		</view>
 
 		<!--弹出框-提交 -->
@@ -442,7 +437,5 @@
 				</view>
 			</view>
 		</view>
-
 	</view>
-
 </view>

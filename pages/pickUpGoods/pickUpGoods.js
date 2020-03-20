@@ -1005,7 +1005,7 @@ Page({
     }.bind(this), 200);
     this.setData({
       showModeText: true,
-      backModel: false
+      backModel: false,
     });
   },
 
@@ -1101,7 +1101,8 @@ Page({
     if (!this.data.showModalStatus && !this.data.showModalStatusFinsh) {
       this.setData({
         backModel: false,
-        showModeText: true
+        showModeText: true,
+        button_change:true
       });
     }
   },
@@ -1465,7 +1466,8 @@ Page({
     this.hideModal();
     this.hideModalFinsh();
     this.setData({
-      pagehide: 0
+      pagehide: 0,
+      button_change:true
     })
     wx.switchTab({
       url: "/pages/home/home"
@@ -1477,7 +1479,8 @@ Page({
     this.hideModal();
     this.hideModalFinsh();
     this.setData({
-      pagehide: 0
+      pagehide: 0,
+      button_change:true
     })
     wx.navigateTo({
       url: '/pages/cunchuList/cunchuList',

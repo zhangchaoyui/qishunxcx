@@ -242,7 +242,7 @@ page {
   color: #333;
   font-size: 24rpx;
   margin-bottom: 20rpx;
-  margin: 0 auto;
+  padding-left:5%;
 }
 
 .outer_xz .xz {
