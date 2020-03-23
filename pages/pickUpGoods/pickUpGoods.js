@@ -39,7 +39,7 @@ Page({
     year: "",
     month: "",
     day: "",
-    orderData: "请选择预计到货时间",
+    orderData: "请选择预计到达时间",
     // 营业执照
     showImgO: true,
     // 上传身份证正面
@@ -1102,7 +1102,7 @@ Page({
       this.setData({
         backModel: false,
         showModeText: true,
-        button_change:true
+        button_change: true
       });
     }
   },
@@ -1467,7 +1467,7 @@ Page({
     this.hideModalFinsh();
     this.setData({
       pagehide: 0,
-      button_change:true
+      button_change: true
     })
     wx.switchTab({
       url: "/pages/home/home"
@@ -1480,7 +1480,7 @@ Page({
     this.hideModalFinsh();
     this.setData({
       pagehide: 0,
-      button_change:true
+      button_change: true
     })
     wx.navigateTo({
       url: '/pages/cunchuList/cunchuList',
@@ -1808,7 +1808,7 @@ Page({
   //清楚用户操作信息
   clearUser() {
     this.setData({
-      orderData: '请选择预计到货时间',
+      orderData: '请选择预计到达时间',
       currentWordValue: '',
       sijiNameValue: '',
       sijiPhoneValue: '',

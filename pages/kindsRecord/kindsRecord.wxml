@@ -4,7 +4,7 @@
 	<!-- 时间 -->
 	<view class="xz_time">
 		<view class="you">
-			<view class="xz_p">{{data.info.name}}-{{data.info.cate_name}} ({{data.cate_type==1?'副品':"正品"}})</view>
+			<view class="xz_p">{{data.info.name}}-{{data.info.cate_name}} ({{data.info.cate_type==1?'副品':"正品"}})</view>
 			<view class="xz_xqing">现存数量：{{data.info.weight/1000}}(吨)</view>
 		</view>
 	</view>

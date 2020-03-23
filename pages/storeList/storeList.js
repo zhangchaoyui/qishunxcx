@@ -14,7 +14,7 @@ Page({
   // 详情页面
   itemClick(e) {
     wx.navigateTo({
-      url: '/pages/kindsRecord/kindsRecord?id=' + e.currentTarget.dataset.id,
+      url: '/pages/kindsRecord/kindsRecord?id=' + e.currentTarget.dataset.id+'&eid='+e.currentTarget.dataset.eid,
     })
   },
 

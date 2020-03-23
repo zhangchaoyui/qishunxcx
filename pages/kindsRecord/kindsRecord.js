@@ -17,7 +17,8 @@ Page({
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      goods_id: options.id
+      goods_id: options.id,
+      eid:options.eid
     })
     this.getStorageList();
   },
@@ -80,6 +81,7 @@ Page({
     let data = {};
     data.goods_id = this.data.goods_id;
     data.page = this.data.page;
+    data.extant_id=this.data.eid
     app._post_form('user/getGoodsListInfo', data, res => {
       console.log(res)
       this.setData({

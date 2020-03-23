@@ -84,7 +84,16 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      dataList: []
+    })
+    wx.showLoading({
+      title: '加载中',
+    })
+    let a = this.getOderList();
+    if (a) {
+      wx.stopPullDownRefresh();
+    }
   },
 
   /**
@@ -94,7 +103,6 @@ Page({
     this.setData({
       page: this.data.page + 1
     })
-    console.log(this.data.page)
     this.getOderList();
   },
 
@@ -131,6 +139,7 @@ Page({
         dataList: this.data.dataList.concat(data),
       })
     })
+    return true;
   },
 
   //废除订单

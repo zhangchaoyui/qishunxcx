@@ -18,7 +18,7 @@ Page({
     year: "",
     month: "",
     day: "",
-    orderData: "请选择预计到货时间",
+    orderData: "请选择预计到达时间",
     // 所选货物列表    
     cargoData: [],
     //外包装列表
@@ -53,7 +53,7 @@ Page({
     xszshowImgTh: true,
     showModeText: true,
     order_id: '',
-    button_change:true
+    button_change: true
   },
 
   // 显示选择提取的货品 
@@ -809,7 +809,7 @@ Page({
     this.hideModalFinsh();
     this.setData({
       pagehide: 0,
-      button_change:true
+      button_change: true
     })
     wx.switchTab({
       url: "/pages/home/home"
@@ -822,7 +822,7 @@ Page({
     this.hideModalFinsh();
     this.setData({
       pagehide: 0,
-      button_change:true
+      button_change: true
     })
     wx.navigateTo({
       url: '/pages/cunchuList/cunchuList',
@@ -1092,7 +1092,7 @@ Page({
 
         orderdata = app.formatTimeTwo(res.data.order.pick_goods_time, 'Y年M月D日')
         this.setData({
-          button_change:true,
+          button_change: true,
           cargoData: cargoData,
           waibz: waibz,
           shipmentData: res.data, //出货总信息
@@ -1195,7 +1195,7 @@ Page({
   //清楚用户操作信息
   clearUser() {
     this.setData({
-      orderData: '请选择预计到货时间',
+      orderData: '请选择预计到达时间',
       sijiNameValue: '',
       sijiPhoneValue: '',
       sijiIdValue: '',

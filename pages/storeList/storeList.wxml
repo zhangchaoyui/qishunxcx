@@ -27,12 +27,12 @@
 
 	<!-- 列表 -->
 	<view class="wp_list">
-		<view class="item" wx:for="{{ dataList }}" wx:key="index" bindtap="itemClick" data-id="{{item.goods_id}}">
+		<view class="item" wx:for="{{ dataList }}" wx:key="index" bindtap="itemClick" data-eid="{{item.id}}" data-id="{{item.goods_id}}">
 			<view class="one">
 				<view>{{ item.goods.goods_name }}</view>
 				<view>{{ item.weight/1000 }}</view>
-				<view>{{ item.goods.put_weight/1000 }}</view>
-				<view>{{ item.goods.pick_weight/1000 }}</view>
+				<view>{{ item.put_weight/1000 }}</view>
+				<view>{{ item.pick_weight/1000 }}</view>
 			</view>
 			<view class="img">
 				<image src="/images/jt_left.png"></image>

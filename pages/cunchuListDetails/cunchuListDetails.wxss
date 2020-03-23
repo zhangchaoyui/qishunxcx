@@ -14,7 +14,7 @@ page {
 
 .youxiao_wp {
   width: 94%;
-  margin: 0rpx auto 0;
+  margin: 0rpx auto 20rpx;
 }
 .youxiao_wp2 {
   width: 94%;
