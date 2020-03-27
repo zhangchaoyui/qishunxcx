@@ -1156,7 +1156,7 @@ Page({
       button_change: false
     })
 
-    if (!wx.getStorageSync('user_enterpriseInfo')) {
+    if (!wx.getStorageSync('status')) {
       wx.showToast({
         title: '请先填写企业信息！',
         icon: 'none',
@@ -1308,9 +1308,16 @@ Page({
 
     app._post_form('put_order/putOrder', dataList, res => {
       wx.removeStorageSync('copyID');
-      //console.log(res);
+      console.log(res);
       if (res.code == 1) {
         // 显示提交成功的弹框
+        if (res.data.is_expire) {
+          wx.showToast({
+            title: '合同已到期请续约~',
+            icon: 'none',
+            duration: 1000
+          })
+        }
         this.showModalFinsh();
         this.setData({
           button_change: true
@@ -1384,7 +1391,7 @@ Page({
           icon: 'success',
           duration: 2000
         });
-        wx.setStorageSync('user_enterpriseInfo', 1)
+        wx.setStorageSync('status', 1)
         this.setData({
           userStatus: 1,
           butAuditText: "修改资料"
@@ -1626,14 +1633,18 @@ Page({
   getDateEditUser() {
     var siteroot = siteinfo.siteroot;
     app._get('user/editUser', {}, res => {
-      if (!res.data.workman_mobile) {
-        wx.setStorageSync('user_enterpriseInfo', 1)
+      if (res.data.is_expire) {
+        wx.showToast({
+          title: '合同时间已到期请续约~',
+          icon: 'none',
+          duration: 2000
+        })
       }
+      if (!res.data.workman_mobile) {}
       res.data[0].start_time = app.formatTimeTwo(res.data[0].start_time, 'Y/M/D')
       res.data[0].end_time = app.formatTimeTwo(res.data[0].end_time, 'Y/M/D')
       this.setData({
         editUserList: res.data[0],
-
       });
       // var listDta = res.data[0][0];
       if (res.data[0].company_name != "" || res.data[0].company_name != undefined) {
@@ -1754,12 +1765,12 @@ Page({
         });
         return false;
       } else {
-        let usertype = wx.getStorageSync('user_enterpriseInfo');
-        if (usertype) {
+        let status = wx.getStorageSync('status');
+        if (status) {
           // 获取存货信息
           _this.getDateOrder();
           this.setData({
-            currect: 1
+            currect: status
           })
         } else {
           // 获取企业信息

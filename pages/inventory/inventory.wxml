@@ -30,7 +30,7 @@
 						所选货物: {{item.cargoItem}} {{item.cate_type}} {{item.cate_name}} {{item.place_name}}
 					</view>
 					<view class="hupwuList">
-						<view class="item_car" wx:for="{{ cargoData }}" wx:for-index="idx" wx:key="idx" bindtap="cargoItem" data-name="{{ item.goods.goods_name }}" data-weight="{{item.weight}}" data-cindex="{{idx}}" data-id="{{item.id}}" data-index="{{ index }}" data-cate_name="{{item.cate.cate_name}}" data-place_name="{{item.region.place_name}}" data-goods_id="{{item.goods_id}}">{{ item.goods.goods_name }} {{item.cate_type==0?'正品':'副品'}} {{item.cate.cate_name}} {{item.region.place_name}}</view>
+						<view class="item_car" wx:for="{{ cargoData }}" wx:for-index="idx" wx:key="idx" bindtap="cargoItem" data-name="{{ item.goods.goods_name }}" data-weight="{{item.total_weight}}" data-cindex="{{idx}}" data-id="{{item.id}}" data-index="{{ index }}" data-cate_name="{{item.cate.cate_name}}" data-place_name="{{item.region.place_name}}" data-goods_id="{{item.goods_id}}">{{ item.goods.goods_name }} {{item.cate_type==0?'正品':'副品'}} {{item.cate.cate_name}} {{item.region.place_name}}</view>
 					</view>
 					<!-- <view class="hupwuList" wx:else></view> -->
 
@@ -101,7 +101,7 @@
 
 				<view class="item">
 					<text>*</text>身份证号
-					<input placeholder-class="place_class" placeholder="请填写您的身份证号" value="{{ sijiIdValue }}" bindinput="sijiId" type="number"></input>
+					<input placeholder-class="place_class" type="idcard" placeholder="请填写您的身份证号" value="{{ sijiIdValue }}" bindinput="sijiId" ></input>
 				</view>
 
 				<view class="item">
@@ -141,7 +141,6 @@
 
 				<view class="item_t item_a">
 					<text>*</text>行驶证
-
 					<view class="item_wp">
 						<view class="perch_t" catchtap="xszClaceZImg">
 							<image class="perch_tshu" src="/images/xsz_z.png" mode='widthFix'></image>
@@ -199,7 +198,7 @@
 		<!--  提交 -->
 		<view class="vaild">
 			<view class="btn">
-				<view>温馨提示：您的货品优先放在租赁面积房内。</view>
+				<view>温馨提示：您的货品优先提取租赁面积房内。</view>
 				<button bindtap="showModal">提交</button>
 			</view>
 		</view>

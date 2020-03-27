@@ -60,7 +60,7 @@ Page({
             wx.setStorageSync('token', res.data.token);
             wx.setStorageSync("imageUrl", res.data.avatarUrl);
             wx.setStorageSync("nickName", res.data.nickName);
-            wx.setStorageSync("user_enterpriseInfo", 0);
+            wx.setStorageSync("status", res.data.status);
             if (res.data.is_auth == 0) {
               wx.setStorageSync("is_auth", true);
             };
@@ -70,9 +70,9 @@ Page({
             if (res.data.nickName == "") {
               wx.setStorageSync("imageUrl", "../../images/pic22.png");
             };
-              wx.switchTab({
-                url: "/pages/home/home"
-              });
+            wx.switchTab({
+              url: "/pages/home/home"
+            });
           }, 1500)
         })
       },

@@ -300,7 +300,7 @@
 
 					<view class="item">
 						<text>*</text>身份证号：
-						<input placeholder-class="place_class" placeholder="请填写您的身份证号" value="{{ sijiIdValue }}" bindinput="sijiId"></input>
+						<input placeholder-class="place_class" type="idcard" placeholder="请填写您的身份证号" value="{{ sijiIdValue }}" bindinput="sijiId"></input>
 					</view>
 
 					<view class="item">

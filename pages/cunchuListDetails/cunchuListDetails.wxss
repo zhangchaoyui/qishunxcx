@@ -40,6 +40,10 @@ page {
   border-bottom: 1rpx solid #eee;
   display: flex;
 }
+.outer_packing2 {
+  padding: 20rpx 0rpx;
+  display: flex;
+}
 
 .outer_packing image {
   width: 25rpx;
@@ -55,6 +59,26 @@ page {
 }
 
 .outer_packing .not_have {
+  margin-left: 60rpx;
+  display: flex;
+  justify-content: center;
+}
+
+
+.outer_packing2 image {
+  width: 25rpx;
+  height: 25rpx;
+  padding-top: 6rpx;
+  margin-left: 10rpx;
+}
+
+.outer_packing2 .have {
+  margin-left: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.outer_packing2 .not_have {
   margin-left: 60rpx;
   display: flex;
   justify-content: center;
@@ -268,4 +292,8 @@ page {
   width: 100%;
   color: #666666;
   border: 1rpx solid #535353;
+}
+.bei{
+  width: 100%;
+  overflow: hidden;
 }

@@ -24,12 +24,16 @@
 				<view class="huowu" wx:if="{{pick!=1}}">
 					货物数量
 					<input placeholder-class="place_class" placeholder="{{item.weight/1000}}" disabled="true"></input>吨
-					<input placeholder-class="place_class" placeholder="{{item.piece}}" disabled="true" ></input>件
+					<input placeholder-class="place_class" placeholder="{{item.piece}}" disabled="true"></input>件
 				</view>
-					<view class="huowu" wx:else>
-					货物数量
+				<view class="huowu" wx:else>
+					仓库数量
 					<input placeholder-class="place_class" placeholder="{{item.weight/1000}}" disabled="true"></input>吨
 				</view>
+				<!-- <view class="huowu" wx:if="{{pick==1}}">
+					租赁房数量
+					<input placeholder-class="place_class" placeholder="{{item.room_weight/1000}}" disabled="true"></input>吨
+				</view> -->
 				<!-- 外包装 -->
 				<view class="outer_packing" wx:if="{{pick!=1}}">
 					外包装
@@ -128,6 +132,28 @@
 				<view>入库时间：{{data.update_time}}</view> -->
 			</view>
 		</view>
+
+		<view class="mine_yuji_time">
+			<view class="youxiao_wp2">
+				<view class="bei">备注：
+					{{data.wk_comment}}</view>
+				<!-- 租赁房
+				<view class="outer_packing2" wx:if="{{pick!=1}}">
+					是否存入租赁房
+					<view class="have">
+						<view class="title">有</view>
+						<image wx:if="{{ item.pack_idss.length>0 }}" src="/images/check_a.png"></image>
+						<image wx:else src="/images/check.png"></image>
+					</view>
+					<view class="not_have">
+						<view class="title">无</view>
+						<image wx:if="{{ item.pack_idss.length==0  }}" src="/images/check_a.png"></image>
+						<image wx:else src="/images/check.png"></image>
+					</view>
+				</view> -->
+			</view>
+		</view>
+
 	</view>
 
 	<!--  提交 -->
