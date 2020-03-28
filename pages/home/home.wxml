@@ -12,7 +12,7 @@
 
 	<!-- 分类 -->
 	<view class="menu">
-		<view class="menu_item" wx:for="{{ menu }}" wx:key="index" data-url="{{ item.urls }}" bindtap="tabClick">
+		<view class="menu_item" wx:for="{{ menu }}" wx:key="index" data-url="{{ item.urls }}" data-index="{{index}}" bindtap="tabClick">
 			<image src="{{ item.imgUrl }}"></image>
 			<view>{{ item.title }}</view>
 		</view>

@@ -15,11 +15,11 @@ Page({
     menu: [{
       imgUrl: "/images/area.png",
       title: "面积租赁",
-      urls: ""
+      urls: "/pages/advertising/advertising?articleid=11"
     }, {
       imgUrl: "/images/storage.png",
       title: "仓储租赁",
-      urls: ""
+      urls: "/pages/advertising/advertising?articleid=12"
     }, {
       imgUrl: "/images/save.png",
       title: "存储入库",
@@ -50,7 +50,6 @@ Page({
 
   // 点击导航
   addresClick() {
-    console.log(1)
     var detail = this.data.detail,
       latitude = Number(detail.user.latitude),
       longitude = Number(detail.user.longitude),
@@ -124,9 +123,16 @@ Page({
   },
 
   tabClick(e) {
-    wx.switchTab({
-      url: e.currentTarget.dataset.url,
-    })
+    console.log(e)
+    if (e.currentTarget.dataset.index <= 1) {
+      wx.navigateTo({
+        url: e.currentTarget.dataset.url,
+      })
+    } else {
+      wx.switchTab({
+        url: e.currentTarget.dataset.url,
+      })
+    }
   },
 
   // 获取首页信息
@@ -144,7 +150,7 @@ Page({
       this.setData({
         advert: res.data.advert,
         article: res.data.article,
-        notices:  res.data.notices
+        notices: res.data.notices
       });
     });
   },

@@ -107,14 +107,20 @@ Page({
     var contactValue = this.data.contactValue,
       textareaValue = this.data.textareaValue;
     // 信息不全
-    if (textareaValue == "" || contactValue == "") {
+    if (textareaValue == "") {
       wx.showToast({
         title: '请完善反馈信息',
         icon: 'none',
         duration: 1000
       })
       return false;
-    };
+    } else if (contactValue == "") {
+      wx.showToast({
+        title: '请完善联系方式',
+        icon: 'none',
+        duration: 1000
+      })
+    }
 
     // 手机号验证
     var myreg = /^[1]([3-9])[0-9]{9}$/;
