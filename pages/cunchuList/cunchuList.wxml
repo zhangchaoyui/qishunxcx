@@ -15,7 +15,7 @@
 		</view>
 
 		<!-- 订单列表 -->
-		<view class="item_list">
+		<view class="item_list" wx:if="{{dataList.length>0}}">
 
 			<!-- 未处理 -->
 			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 0 }}" data-id="{{ item.id }}">
@@ -91,6 +91,9 @@
 				</view>
 			</view>
 		</view>
+		<view wx:else class="item_list2">
+			暂无订单！
+		</view>
 
 	</view>
 	<view class="mine_wp" wx:else>
@@ -100,7 +103,7 @@
 		</view>
 
 		<!-- 订单列表 -->
-		<view class="item_list">
+		<view class="item_list" wx:if="{{dataList.length>0}}">
 
 			<!-- 未处理 -->
 			<view class="items" wx:for="{{ dataList }}" wx:key="index" wx:if="{{ currtabMine == 0 }}" data-id="{{ item.id }}">
@@ -173,6 +176,9 @@
 					</view>
 				</view>
 			</view>
+		</view>
+		<view wx:else class="item_list2">
+			暂无订单！
 		</view>
 	</view>
 </view>

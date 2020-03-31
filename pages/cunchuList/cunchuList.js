@@ -155,7 +155,7 @@ Page({
       })
       //返回上一页
       setTimeout(res => {
-        this.onShow();
+        this.getOderList();
       }, 2000)
       // that.getOderList();
     })

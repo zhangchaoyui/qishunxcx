@@ -44,8 +44,7 @@
   border-bottom: 4rpx solid #0e948b;
 }
 
-.item_list {
-}
+.item_list {}
 
 .items {
   width: 90%;
@@ -118,4 +117,12 @@
 
 .items_mine_right .details {
   background: #d9d0b3;
+}
+
+.item_list2 {
+  height: 70vh;
+  line-height: 70vh;
+  color: #666;
+  font-size: 30rpx;
+  text-align: center;
 }
