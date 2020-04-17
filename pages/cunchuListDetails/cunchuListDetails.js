@@ -21,13 +21,7 @@ Page({
     })
     if (options.pick == 0) {
       app._post_form('/user/getPutOrderInfo', data, res => {
-        let hours = app.formatTimeTwo(res.data.data.put_goods_time, 'h');
-        if (hours < 12) {
-          str = '上午';
-        } else {
-          str = '下午';
-        }
-        let time = app.formatTimeTwo(res.data.data.put_goods_time, 'Y/M/D') + '   ' + str;
+        let time = app.formatTimeTwo(res.data.data.put_goods_time, 'Y/M/D') + '   ' + res.data.data.am_and_pm;
         if (res.data.data.goods[0].pack_nums > 0) {
           let showImage = true
           this.setData({
@@ -51,13 +45,7 @@ Page({
       })
     } else {
       app._post_form('/user/getPickOrderInfo', data, res => {
-        let hours = app.formatTimeTwo(res.data.data.pick_goods_time, 'h');
-        if (hours < 12) {
-          str = '上午';
-        } else {
-          str = '下午';
-        }
-        let time = app.formatTimeTwo(res.data.data.pick_goods_time, 'Y/M/D') + '   ' + str;
+        let time = app.formatTimeTwo(res.data.data.pick_goods_time, 'Y/M/D') + '   ' + res.data.data.am_and_pm;
         res.data.data.update_time = app.formatTimeTwo(res.data.data.update_time, 'M/D')
         if (res.data.data.goods[0].pack_nums > 0) {
           let showImage = true
@@ -159,7 +147,7 @@ Page({
     })
   },
 
-  
+
   //预览单个图片
   previewMoreImage(e) {
     let src = e.currentTarget.dataset.src;

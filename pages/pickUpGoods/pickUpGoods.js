@@ -460,9 +460,8 @@ Page({
             success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
-                image_list: 'https://qishun.400539.com/' + result.src,
+                image_list: 'https://www.qishunyunchu.com/' + result.src,
                 'businessId': result.id,
-
               })
             }
           });
@@ -516,7 +515,7 @@ Page({
             success: function (res) {
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               _this.setData({
-                image_idZ: 'https://qishun.400539.com/' + result.src,
+                image_idZ: 'https://www.qishunyunchu.com/' + result.src,
                 'idClaceZId': result.id
               })
             }
@@ -575,7 +574,7 @@ Page({
               let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
               //console.log(result, 7777);
               _this.setData({
-                image_idF: 'https://qishun.400539.com/' + result.src,
+                image_idF: 'https://www.qishunyunchu.com/' + result.src,
                 'offeridId': result.id
               })
             }
